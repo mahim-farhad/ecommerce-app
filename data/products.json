@@ -1,0 +1,327 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Handwoven Muslin Sari",
+      "description": "A delicate handwoven muslin sari with intricate designs, ideal for special occasions.",
+      "price": 120.0,
+      "stock": 15,
+      "vendor": "Dhaka Looms",
+      "images": ["muslin_sari1.jpg", "muslin_sari2.jpg"],
+      "category": "Textile Crafts"
+    },
+    {
+      "id": 2,
+      "name": "Jamdani Sari",
+      "description": "Traditional handwoven Jamdani sari made from fine cotton and featuring geometric motifs.",
+      "price": 200.0,
+      "stock": 10,
+      "vendor": "Heritage Weaves",
+      "images": ["jamdani_sari1.jpg", "jamdani_sari2.jpg"],
+      "category": "Textile Crafts"
+    },
+    {
+      "id": 3,
+      "name": "Terracotta Elephant Sculpture",
+      "description": "A handcrafted terracotta elephant sculpture for home decor.",
+      "price": 25.0,
+      "stock": 50,
+      "vendor": "Clay Creations",
+      "images": ["terracotta_elephant1.jpg", "terracotta_elephant2.jpg"],
+      "category": "Pottery and Ceramics"
+    },
+    {
+      "id": 4,
+      "name": "Clay Pot Set",
+      "description": "Set of three clay pots for cooking and storage, handmade with natural clay.",
+      "price": 45.0,
+      "stock": 30,
+      "vendor": "Terracotta Artisans",
+      "images": ["clay_pot_set1.jpg", "clay_pot_set2.jpg"],
+      "category": "Pottery and Ceramics"
+    },
+    {
+      "id": 5,
+      "name": "Hand-Carved Wooden Chair",
+      "description": "A beautifully hand-carved wooden chair made from high-quality teak wood.",
+      "price": 150.0,
+      "stock": 5,
+      "vendor": "Woodcraft Artisans",
+      "images": ["wooden_chair1.jpg", "wooden_chair2.jpg"],
+      "category": "Woodcraft"
+    },
+    {
+      "id": 6,
+      "name": "Wooden Jewelry Box",
+      "description": "A handcrafted wooden jewelry box with intricate carvings and velvet lining.",
+      "price": 40.0,
+      "stock": 20,
+      "vendor": "Wood Wonders",
+      "images": ["wooden_jewelry_box1.jpg", "wooden_jewelry_box2.jpg"],
+      "category": "Woodcraft"
+    },
+    {
+      "id": 7,
+      "name": "Handwoven Jute Tote Bag",
+      "description": "Eco-friendly handwoven jute tote bag with a minimalist design.",
+      "price": 18.0,
+      "stock": 100,
+      "vendor": "Jute Creations",
+      "images": ["jute_tote_bag1.jpg", "jute_tote_bag2.jpg"],
+      "category": "Jute Crafts"
+    },
+    {
+      "id": 8,
+      "name": "Jute Storage Basket",
+      "description": "Handcrafted jute basket perfect for home storage and decor.",
+      "price": 30.0,
+      "stock": 40,
+      "vendor": "Natural Crafts",
+      "images": ["jute_basket1.jpg", "jute_basket2.jpg"],
+      "category": "Jute Crafts"
+    },
+    {
+      "id": 9,
+      "name": "Brass Candle Holder",
+      "description": "Elegant handcrafted brass candle holder perfect for home decoration.",
+      "price": 20.0,
+      "stock": 25,
+      "vendor": "Metallic Creations",
+      "images": ["brass_candle_holder1.jpg", "brass_candle_holder2.jpg"],
+      "category": "Metal Crafts"
+    },
+    {
+      "id": 10,
+      "name": "Copper Serving Tray",
+      "description": "Hand-forged copper serving tray with hammered details.",
+      "price": 60.0,
+      "stock": 10,
+      "vendor": "Copper Crafts",
+      "images": ["copper_tray1.jpg", "copper_tray2.jpg"],
+      "category": "Metal Crafts"
+    },
+    {
+      "id": 11,
+      "name": "Cane Chair",
+      "description": "Traditional handwoven cane chair, perfect for indoor and outdoor use.",
+      "price": 75.0,
+      "stock": 12,
+      "vendor": "Bamboo and Cane Artisans",
+      "images": ["cane_chair1.jpg", "cane_chair2.jpg"],
+      "category": "Bamboo and Cane Products"
+    },
+    {
+      "id": 12,
+      "name": "Bamboo Wall Hanging",
+      "description": "A beautifully handcrafted bamboo wall hanging, ideal for adding a rustic touch to your home.",
+      "price": 35.0,
+      "stock": 20,
+      "vendor": "EcoDecor",
+      "images": ["bamboo_wall_hanging1.jpg", "bamboo_wall_hanging2.jpg"],
+      "category": "Bamboo and Cane Products"
+    },
+    {
+      "id": 13,
+      "name": "Handcrafted Leather Wallet",
+      "description": "A sleek, handmade leather wallet with multiple card slots and a coin pocket.",
+      "price": 25.0,
+      "stock": 30,
+      "vendor": "Leatherworks",
+      "images": ["leather_wallet1.jpg", "leather_wallet2.jpg"],
+      "category": "Leather Crafts"
+    },
+    {
+      "id": 14,
+      "name": "Handmade Leather Sandals",
+      "description": "Comfortable and stylish handmade leather sandals.",
+      "price": 40.0,
+      "stock": 15,
+      "vendor": "Artisan Footwear",
+      "images": ["leather_sandals1.jpg", "leather_sandals2.jpg"],
+      "category": "Leather Crafts"
+    },
+    {
+      "id": 15,
+      "name": "Silver Bead Necklace",
+      "description": "A handcrafted silver bead necklace with an intricate pattern.",
+      "price": 50.0,
+      "stock": 8,
+      "vendor": "Bengal Jewelers",
+      "images": ["silver_necklace1.jpg", "silver_necklace2.jpg"],
+      "category": "Jewelry"
+    },
+    {
+      "id": 16,
+      "name": "Terracotta Earrings",
+      "description": "Colorful terracotta earrings, handcrafted with a modern design.",
+      "price": 15.0,
+      "stock": 50,
+      "vendor": "Clay Gems",
+      "images": ["terracotta_earrings1.jpg", "terracotta_earrings2.jpg"],
+      "category": "Jewelry"
+    },
+    {
+      "id": 17,
+      "name": "Handmade Paper Lampshade",
+      "description": "Eco-friendly handmade paper lampshade for a soft and natural lighting effect.",
+      "price": 30.0,
+      "stock": 20,
+      "vendor": "Paper Artisans",
+      "images": ["paper_lampshade1.jpg", "paper_lampshade2.jpg"],
+      "category": "Paper Crafts"
+    },
+    {
+      "id": 18,
+      "name": "Hand-painted Greeting Cards",
+      "description": "Set of 5 hand-painted greeting cards made from eco-friendly paper.",
+      "price": 12.0,
+      "stock": 100,
+      "vendor": "ArtPaper Studio",
+      "images": ["greeting_cards1.jpg", "greeting_cards2.jpg"],
+      "category": "Paper Crafts"
+    },
+    {
+      "id": 19,
+      "name": "Handwoven Straw Basket",
+      "description": "Handwoven straw basket perfect for storage and home decor.",
+      "price": 25.0,
+      "stock": 30,
+      "vendor": "Weave Wonders",
+      "images": ["straw_basket1.jpg", "straw_basket2.jpg"],
+      "category": "Handwoven Crafts"
+    },
+    {
+      "id": 20,
+      "name": "Handwoven Rug",
+      "description": "A vibrant handwoven rug made from natural fibers, ideal for any room.",
+      "price": 55.0,
+      "stock": 10,
+      "vendor": "Fiber Creations",
+      "images": ["woven_rug1.jpg", "woven_rug2.jpg"],
+      "category": "Handwoven Crafts"
+    },
+    {
+      "id": 21,
+      "name": "Stone Buddha Statue",
+      "description": "Hand-carved stone Buddha statue for spiritual and decorative purposes.",
+      "price": 85.0,
+      "stock": 7,
+      "vendor": "Sacred Stones",
+      "images": ["stone_buddha1.jpg", "stone_buddha2.jpg"],
+      "category": "Stone Crafts"
+    },
+    {
+      "id": 22,
+      "name": "Decorative Stone Vase",
+      "description": "Handcrafted stone vase with intricate carvings, suitable for indoor plants or decoration.",
+      "price": 40.0,
+      "stock": 12,
+      "vendor": "Stone Creations",
+      "images": ["stone_vase1.jpg", "stone_vase2.jpg"],
+      "category": "Stone Crafts"
+    },
+    {
+      "id": 23,
+      "name": "Nakshi Kantha Quilt",
+      "description": "Traditional Nakshi Kantha quilt with beautiful embroidery patterns, perfect for a cozy home.",
+      "price": 90.0,
+      "stock": 8,
+      "vendor": "Kantha Craft",
+      "images": ["nakshi_kantha_quilt1.jpg", "nakshi_kantha_quilt2.jpg"],
+      "category": "Embroidery and Needlework"
+    },
+    {
+      "id": 24,
+      "name": "Embroidered Pillow Cover",
+      "description": "Hand-stitched pillow cover with elegant embroidery, ideal for adding a touch of tradition to any room.",
+      "price": 25.0,
+      "stock": 30,
+      "vendor": "Thread Works",
+      "images": [
+        "embroidered_pillow_cover1.jpg",
+        "embroidered_pillow_cover2.jpg"
+      ],
+      "category": "Embroidery and Needlework"
+    },
+    {
+      "id": 25,
+      "name": "Patachitra Scroll Painting",
+      "description": "Traditional Patachitra scroll painting depicting mythological scenes and traditional motifs.",
+      "price": 70.0,
+      "stock": 5,
+      "vendor": "Patachitra Studio",
+      "images": ["patachitra_painting1.jpg", "patachitra_painting2.jpg"],
+      "category": "Paintings & Visual Arts"
+    },
+    {
+      "id": 26,
+      "name": "Batik Art Wall Hanging",
+      "description": "Handcrafted Batik art wall hanging with vibrant colors and unique designs.",
+      "price": 50.0,
+      "stock": 15,
+      "vendor": "Batik Artisans",
+      "images": ["batik_wall_hanging1.jpg", "batik_wall_hanging2.jpg"],
+      "category": "Paintings & Visual Arts"
+    },
+    {
+      "id": 27,
+      "name": "Shell Necklace",
+      "description": "Handmade necklace made from natural shells, featuring a bohemian design.",
+      "price": 22.0,
+      "stock": 25,
+      "vendor": "Coastal Crafts",
+      "images": ["shell_necklace1.jpg", "shell_necklace2.jpg"],
+      "category": "Shell and Coral Crafts"
+    },
+    {
+      "id": 28,
+      "name": "Coral Decorative Frame",
+      "description": "Elegant decorative frame made from coral, perfect for displaying photographs or artwork.",
+      "price": 35.0,
+      "stock": 10,
+      "vendor": "Coral Artisans",
+      "images": ["coral_frame1.jpg", "coral_frame2.jpg"],
+      "category": "Shell and Coral Crafts"
+    },
+    {
+      "id": 29,
+      "name": "Recycled Paper Notebook",
+      "description": "Notebook made from recycled paper with a hand-crafted cover, ideal for notes and journaling.",
+      "price": 12.0,
+      "stock": 40,
+      "vendor": "EcoWrites",
+      "images": ["recycled_notebook1.jpg", "recycled_notebook2.jpg"],
+      "category": "Recycled & Upcycled Crafts"
+    },
+    {
+      "id": 30,
+      "name": "Upcycled Denim Tote",
+      "description": "Stylish tote bag made from upcycled denim, featuring sturdy handles and a spacious interior.",
+      "price": 28.0,
+      "stock": 25,
+      "vendor": "Denim Revive",
+      "images": ["denim_tote1.jpg", "denim_tote2.jpg"],
+      "category": "Recycled & Upcycled Crafts"
+    },
+    {
+      "id": 31,
+      "name": "Handmade Clay Doll",
+      "description": "Colorful handmade clay doll, perfect as a decorative piece or a gift.",
+      "price": 15.0,
+      "stock": 60,
+      "vendor": "Clay Art Studio",
+      "images": ["clay_doll1.jpg", "clay_doll2.jpg"],
+      "category": "Folk Toys"
+    },
+    {
+      "id": 32,
+      "name": "Wooden Spinning Top",
+      "description": "Traditional wooden spinning top, handcrafted and painted in bright colors.",
+      "price": 8.0,
+      "stock": 50,
+      "vendor": "Toy Makers",
+      "images": ["wooden_top1.jpg", "wooden_top2.jpg"],
+      "category": "Folk Toys"
+    }
+  ]
+}

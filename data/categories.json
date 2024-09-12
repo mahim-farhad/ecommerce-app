@@ -1,0 +1,139 @@
+{
+  "categories": [
+    {
+      "name": "Textile Crafts",
+      "subcategories": [
+        "Muslin",
+        "Jamdani",
+        "Nakshi Kantha",
+        "Handwoven Scarves & Shawls",
+        "Silk"
+      ]
+    },
+    {
+      "name": "Pottery and Ceramics",
+      "subcategories": [
+        "Terracotta Sculptures",
+        "Clay Pots & Jars",
+        "Ceramic Tableware",
+        "Clay Toys",
+        "Vases & Planters"
+      ]
+    },
+    {
+      "name": "Woodcraft",
+      "subcategories": [
+        "Furniture",
+        "Wooden Toys",
+        "Decorative Panels",
+        "Wooden Utensils",
+        "Jewelry Boxes"
+      ]
+    },
+    {
+      "name": "Jute Crafts",
+      "subcategories": [
+        "Bags",
+        "Rugs & Mats",
+        "Baskets",
+        "Wall Hangings",
+        "Home Decor Items"
+      ]
+    },
+    {
+      "name": "Metal Crafts",
+      "subcategories": [
+        "Brassware",
+        "Copper Crafts",
+        "Iron Works",
+        "Gold & Silver Jewelry",
+        "Metal Sculptures"
+      ]
+    },
+    {
+      "name": "Bamboo and Cane Products",
+      "subcategories": [
+        "Furniture",
+        "Baskets",
+        "Mats",
+        "Decorative Items",
+        "Hand Fans"
+      ]
+    },
+    {
+      "name": "Leather Crafts",
+      "subcategories": [
+        "Bags & Wallets",
+        "Footwear",
+        "Belts",
+        "Diaries & Notebooks"
+      ]
+    },
+    {
+      "name": "Jewelry",
+      "subcategories": [
+        "Silver Jewelry",
+        "Bead Jewelry",
+        "Bamboo Jewelry",
+        "Terracotta Jewelry"
+      ]
+    },
+    {
+      "name": "Paper Crafts",
+      "subcategories": [
+        "Paper Mache",
+        "Handmade Paper",
+        "Paper Lamps & Lanterns",
+        "Greeting Cards"
+      ]
+    },
+    {
+      "name": "Handwoven Crafts",
+      "subcategories": [
+        "Baskets",
+        "Hats & Caps",
+        "Mats & Rugs",
+        "Wall Hangings"
+      ]
+    },
+    {
+      "name": "Stone Crafts",
+      "subcategories": ["Statues", "Stone Jewelry", "Decorative Items"]
+    },
+    {
+      "name": "Embroidery and Needlework",
+      "subcategories": [
+        "Nakshi Kantha",
+        "Zari Work",
+        "Hand-stitched Clothing",
+        "Pillow Covers"
+      ]
+    },
+    {
+      "name": "Paintings & Visual Arts",
+      "subcategories": [
+        "Patachitra",
+        "Batik Art",
+        "Miniature Paintings",
+        "Wall Art"
+      ]
+    },
+    {
+      "name": "Shell and Coral Crafts",
+      "subcategories": ["Jewelry", "Decorative Items", "Keychains & Souvenirs"]
+    },
+    {
+      "name": "Recycled & Upcycled Crafts",
+      "subcategories": [
+        "Recycled Paper Products",
+        "Upcycled Clothing",
+        "Recycled Metal Art",
+        "Upcycled Decor"
+      ]
+    },
+    {
+      "name": "Folk Toys",
+      "subcategories": ["Clay Toys", "Wooden Toys", "Jute Dolls"]
+    }
+  ]
+}

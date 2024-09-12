@@ -1,0 +1,164 @@
+{
+  "businesses": [
+    {
+      "id": 1,
+      "name": "TechNova Solutions",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 5,
+      "numberOfProducts": 12,
+      "likes": 1234
+    },
+    {
+      "id": 2,
+      "name": "GreenLeaf Organics",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 3,
+      "numberOfProducts": 8,
+      "likes": 987
+    },
+    {
+      "id": 3,
+      "name": "UrbanStyle Apparel",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 7,
+      "numberOfProducts": 45,
+      "likes": 2567
+    },
+    {
+      "id": 4,
+      "name": "SwiftRide Motors",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 10,
+      "numberOfProducts": 6,
+      "likes": 3210
+    },
+    {
+      "id": 5,
+      "name": "CozyCraft Furniture",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 4,
+      "numberOfProducts": 20,
+      "likes": 1543
+    },
+    {
+      "id": 6,
+      "name": "PetPal Supplies",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 6,
+      "numberOfProducts": 30,
+      "likes": 2098
+    },
+    {
+      "id": 7,
+      "name": "FitLife Gear",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 2,
+      "numberOfProducts": 15,
+      "likes": 876
+    },
+    {
+      "id": 8,
+      "name": "SoundWave Audio",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 8,
+      "numberOfProducts": 25,
+      "likes": 3456
+    },
+    {
+      "id": 9,
+      "name": "GourmetDelight Foods",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 12,
+      "numberOfProducts": 50,
+      "likes": 4321
+    },
+    {
+      "id": 10,
+      "name": "EcoClean Solutions",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 3,
+      "numberOfProducts": 10,
+      "likes": 1234
+    },
+    {
+      "id": 11,
+      "name": "AdventurePro Gear",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 5,
+      "numberOfProducts": 35,
+      "likes": 2345
+    },
+    {
+      "id": 12,
+      "name": "SmartHome Systems",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 4,
+      "numberOfProducts": 18,
+      "likes": 1876
+    },
+    {
+      "id": 13,
+      "name": "BeautyBliss Cosmetics",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 6,
+      "numberOfProducts": 40,
+      "likes": 3210
+    },
+    {
+      "id": 14,
+      "name": "KidZone Toys",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 9,
+      "numberOfProducts": 60,
+      "likes": 2987
+    },
+    {
+      "id": 15,
+      "name": "OfficeEase Supplies",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 7,
+      "numberOfProducts": 22,
+      "likes": 1543
+    },
+    {
+      "id": 16,
+      "name": "GreenThumb Gardens",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 4,
+      "numberOfProducts": 28,
+      "likes": 1876
+    },
+    {
+      "id": 17,
+      "name": "CraftCorner Creations",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 3,
+      "numberOfProducts": 45,
+      "likes": 2109
+    },
+    {
+      "id": 18,
+      "name": "TechGadget Hub",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 5,
+      "numberOfProducts": 30,
+      "likes": 3456
+    },
+    {
+      "id": 19,
+      "name": "FitnessFuel Nutrition",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 2,
+      "numberOfProducts": 15,
+      "likes": 987
+    },
+    {
+      "id": 20,
+      "name": "LuxeLeather Goods",
+      "logo": "/placeholder.svg?height=100&width=100",
+      "yearsOfOperation": 8,
+      "numberOfProducts": 25,
+      "likes": 2765
+    }
+  ]
+}
