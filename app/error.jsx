@@ -22,13 +22,11 @@ export default function Error({ error, reset }) {
       >
         <Container>
           <Box>
-            <Typography type="h4" className="dark:text-black">
+            <Typography type="h4" className="mb-4 dark:text-black">
               {error.message}
             </Typography>
 
-            <Button onClick={() => reset()}>
-              Try again
-            </Button>
+            <Button onClick={() => reset()}>Try again</Button>
           </Box>
         </Container>
       </Section>
