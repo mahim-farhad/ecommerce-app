@@ -1,4 +1,11 @@
+import axiosInstance from "@libs/axios/axiosInstance";
+
 import axiosSecure from "@libs/axios/axiosSecure";
+import { delayExecute } from "@utils/functions";
+
+const noCacheHeaders = {
+  headers: { cache: "no-store" },
+};
 
 export async function createProduct(productData) {
   const res = await axiosSecure.post("/products", {
@@ -8,7 +15,7 @@ export async function createProduct(productData) {
   return res.data;
 }
 
-export async function updateUser(productId, productData) {
+export async function updateProduct(productId, productData) {
   const res = await axiosSecure.put(`/users/${productId}`, {
     data: { ...productData },
   });
@@ -63,6 +70,36 @@ export async function getProducts() {
     const data = await response.json();
 
     return data;
+  } catch (error) {
+    let errorMessage = "";
+
+    if (error.response) {
+      const { status, data } = error.response;
+
+      if (status === 400 || status === 429) {
+        const serverErrorMessage = data?.error?.message || errorMessage;
+
+        errorMessage = serverErrorMessage;
+      } else {
+        errorMessage = data;
+      }
+    } else {
+      errorMessage = error.message || "Something went wrong. Please try again.";
+    }
+
+    return errorMessage;
+  }
+}
+
+export async function getProductsAxios() {
+  try {
+    delayExecute(3000);
+
+    const res = await axiosInstance.get("/products?populate=*", {
+      noCacheHeaders,
+    });
+
+    return res.data;
   } catch (error) {
     let errorMessage = "";
 

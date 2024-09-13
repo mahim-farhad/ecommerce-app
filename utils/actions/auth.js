@@ -12,19 +12,15 @@ import { registerUser, authenticateUser } from "@api/auth";
 import { delayExecute } from "@utils/functions";
 
 export async function registerAction(prevState, formData) {
-  const data =
-    Object.fromEntries(formData.entries());
+  const data = Object.fromEntries(formData.entries());
 
-  const validatedFields =
-    registerZodSchema.safeParse(data);
+  const validatedFields = registerZodSchema.safeParse(data);
 
   if (!validatedFields.success) {
     return {
       ...prevState,
-      message:
-        "Required fileds must be filled!",
-      errors:
-        validatedFields.error.flatten().fieldErrors
+      message: "Required fileds must be filled!",
+      errors: validatedFields.error.flatten().fieldErrors,
     };
   }
 
@@ -35,8 +31,7 @@ export async function registerAction(prevState, formData) {
   // console.log(hashedPassword)
 
   try {
-    const res =
-      await registerUser(validatedFields.data);
+    const res = await registerUser(validatedFields.data);
 
     await createSession(res.jwt);
   } catch (error) {
@@ -44,15 +39,14 @@ export async function registerAction(prevState, formData) {
 
     const fieldErrors = {
       username: "",
-      email: ""
+      email: "",
     };
 
     if (error.response) {
       const { status, data } = error.response;
 
       if (status === 400 || status === 429) {
-        const serverErrorMessage =
-          data?.error?.message || errorMessage;
+        const serverErrorMessage = data?.error?.message || errorMessage;
 
         errorMessage = serverErrorMessage;
 
@@ -65,14 +59,13 @@ export async function registerAction(prevState, formData) {
         errorMessage = data;
       }
     } else {
-      errorMessage =
-        error.message || "Something went wrong. Please try again."
+      errorMessage = error.message || "Something went wrong. Please try again.";
     }
 
     return {
       ...prevState,
       message: errorMessage,
-      errors: fieldErrors
+      errors: fieldErrors,
     };
   }
 
@@ -90,19 +83,15 @@ export async function loginAction(prevState, formData) {
   if (!validatedFields.success) {
     return {
       ...prevState,
-      message:
-        "Required fileds must be filled!",
-      errors:
-        validatedFields.error.flatten().fieldErrors
+      message: "Required fileds must be filled!",
+      errors: validatedFields.error.flatten().fieldErrors,
     };
   }
 
-  const redirectTo =
-    formData.get("redirectTo") || "/";
+  const redirectTo = formData.get("redirectTo") || "/";
 
   try {
-    const res =
-      await authenticateUser(validatedFields.data);
+    const res = await authenticateUser(validatedFields.data);
 
     await createSession(res.jwt);
   } catch (error) {
@@ -110,15 +99,14 @@ export async function loginAction(prevState, formData) {
 
     const fieldErrors = {
       identifier: "",
-      password: ""
+      password: "",
     };
 
     if (error.response) {
       const { status, data } = error.response;
 
       if (status === 400 || status === 429) {
-        const serverErrorMessage =
-          data?.error?.message || errorMessage;
+        const serverErrorMessage = data?.error?.message || errorMessage;
 
         errorMessage = serverErrorMessage;
 
@@ -131,14 +119,13 @@ export async function loginAction(prevState, formData) {
         errorMessage = data;
       }
     } else {
-      errorMessage =
-        error.message || "Something went wrong. Please try again."
+      errorMessage = error.message || "Something went wrong. Please try again.";
     }
 
     return {
       ...prevState,
       message: errorMessage,
-      errors: fieldErrors
+      errors: fieldErrors,
     };
   }
 

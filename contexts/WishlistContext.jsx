@@ -1,8 +1,11 @@
 "use client";
 
 import {
-  useState, useEffect, createContext,
-  useContext, useReducer
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useReducer,
 } from "react";
 
 import PropTypes from "prop-types";
@@ -62,7 +65,7 @@ export function WishtlistProvider({ children }) {
 
       dispatch({
         type: "INITIALIZE_WISHLIST",
-        items: parsedItems
+        items: parsedItems,
       });
     }
   }, []);
@@ -76,11 +79,12 @@ export function WishtlistProvider({ children }) {
   function addToWishlist(item) {
     dispatch({
       type: "ADD_TO_WISHLIST",
-      item
+      item,
     });
 
-    const isItemInWishlist =
-      wishlist.some((wishlistItem) => wishlistItem.id === item.id);
+    const isItemInWishlist = wishlist.some(
+      (wishlistItem) => wishlistItem.id === item.id
+    );
 
     if (isItemInWishlist) {
       toast.error(`${item.title} removed from wishlist!`);
@@ -92,7 +96,7 @@ export function WishtlistProvider({ children }) {
   function removeFromWishlist(item) {
     dispatch({
       type: "REMOVE_FROM_WISHLIST",
-      item
+      item,
     });
 
     toast.error(`Item removed from wishlist!`);
@@ -100,7 +104,7 @@ export function WishtlistProvider({ children }) {
 
   function clearWishlist() {
     dispatch({
-      type: "CLEAR_WISHLIST"
+      type: "CLEAR_WISHLIST",
     });
 
     toast.error(`Items removed from wishlist!`);
@@ -111,7 +115,7 @@ export function WishtlistProvider({ children }) {
     addToWishlist,
     removeFromWishlist,
     clearWishlist,
-    totalWishlistItems: isClient ? wishlist.length : 0
+    totalWishlistItems: isClient ? wishlist.length : 0,
   };
 
   return (

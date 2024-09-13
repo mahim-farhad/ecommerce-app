@@ -1,11 +1,3 @@
-// import localFont from "next/font/local";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-
 import { poppins, robotoCondensed, firaCode } from "@libs/fonts";
 
 import clsx from "clsx";
@@ -30,12 +22,14 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "rgb(0 0 0)"
+  themeColor: "rgb(0 0 0)",
 };
 
 export default function RootLayout({ children }) {
   const bodyClasses = clsx(
-    poppins.variable, robotoCondensed.variable, firaCode.variable,
+    poppins.variable,
+    robotoCondensed.variable,
+    firaCode.variable,
     "antialiased",
     "font-sans text-base leading-normal font-normal",
     "select-none overflow-x-hidden",

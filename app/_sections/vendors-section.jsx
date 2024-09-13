@@ -12,8 +12,6 @@ import VendorCard from "@components/cards/vendor-card";
 export default async function VendorsSection() {
   const vendorsData = await getVendorsAxios();
 
-  console.log(vendorsData);
-
   return (
     <Section>
       <Container>

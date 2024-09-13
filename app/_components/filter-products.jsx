@@ -22,19 +22,13 @@ export default function FilterProducts() {
     <Box>
       <Container>
         <form
-          className={clsx(
-            "flex flex-wrap lg:flex-nowrap gap-1 items-center"
-          )}
+          className={clsx("flex flex-wrap lg:flex-nowrap gap-1 items-center")}
         >
           <Select>
             <SelectTrigger
               size="lg"
               placeholder="All Categories"
-              className={clsx(
-                "shrink-0",
-                "order-1",
-                "lg:w-60 uppercase",
-              )}
+              className={clsx("shrink-0", "order-1", "lg:w-60 uppercase")}
             />
 
             <SelectContent>
@@ -50,21 +44,14 @@ export default function FilterProducts() {
             type="search"
             size="lg"
             placeholder="Search for items and brands"
-            className={clsx(
-              "flex-1",
-              "order-3 lg:order-2",
-            )}
+            className={clsx("flex-1", "order-3 lg:order-2")}
           />
 
           <Select>
             <SelectTrigger
               size="lg"
               placeholder="All Dealers"
-              className={clsx(
-                "shrink-0",
-                "order-1 lg:order-3",
-                "lg:w-60",
-              )}
+              className={clsx("shrink-0", "order-1 lg:order-3", "lg:w-60")}
             />
 
             <SelectContent>
@@ -76,19 +63,11 @@ export default function FilterProducts() {
 
           <Button
             size="lg"
-            className={clsx(
-              "shrink-0",
-              "order-4",
-              "border-border"
-            )}
+            className={clsx("shrink-0", "order-4", "border-border")}
           >
-            <span className="hidden sm:inline-block">
-              Brouse Products
-            </span>
+            <span className="hidden sm:inline-block">Brouse Products</span>
 
-            <Icon
-              name="Search"
-            />
+            <Icon name="Search" />
           </Button>
         </form>
       </Container>

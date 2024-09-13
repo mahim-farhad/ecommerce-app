@@ -1,14 +1,12 @@
+import clsx from "clsx";
+
 import Typography from "@components/ui/typography";
-import Icon from "@components/ui/icon";
+import Link from "@components/ui/link";
 
 import Section from "@components/layouts/section";
 import Container from "@components/layouts/container";
 import Box from "@components/layouts/box";
-import {
-  Grid, GridItem
-} from "@components/layouts/grid";
-import clsx from "clsx";
-import Link from "@components/ui/link";
+import { Grid, GridItem } from "@components/layouts/grid";
 
 export default function HistorySection() {
   return (
@@ -22,7 +20,7 @@ export default function HistorySection() {
           )}
         >
           <GridItem className="col-span-full lg:col-span-1">
-            <div className="flex flex-col justify-center items-center">
+            <Box className="flex flex-col justify-center items-center">
               <img
                 src="https://www.empoweryouthforwork.org/assets/2018/04/Webp.net-resizeimage-3-768x536.jpg"
                 alt="..."
@@ -34,14 +32,12 @@ export default function HistorySection() {
                 alt="..."
                 className="h-auto max-w-full w-3/4  ml-auto"
               />
-            </div>
+            </Box>
           </GridItem>
 
           <GridItem className="col-span-full lg:col-span-1">
             <Box className="lg:mr-12">
-              <Typography
-                className="text-gray-400"
-              >
+              <Typography className="text-gray-400">
                 Handicrafts History
               </Typography>
 
@@ -49,33 +45,21 @@ export default function HistorySection() {
                 About Bangladesh Handicrafts
               </Typography>
 
-              <Typography
-                className={clsx(
-                  "text-base",
-                  "text-gray-400"
-                )}
-              >
-                Open created shall two he second moving whose. He face
-                whose two upon, fowl behold waters. Fly there their day
-                creepeth. Darkness beginning spirit after. Creepeth subdue.
-                Brought may, first. Under living that.
+              <Typography className={clsx("text-base", "text-gray-400")}>
+                Open created shall two he second moving whose. He face whose two
+                upon, fowl behold waters. Fly there their day creepeth. Darkness
+                beginning spirit after. Creepeth subdue. Brought may, first.
+                Under living that.
               </Typography>
 
               <Typography
-                className={clsx(
-                  "mt-4 mb-8",
-                  "text-base",
-                  "text-gray-400"
-                )}
+                className={clsx("mt-4 mb-8", "text-base", "text-gray-400")}
               >
-                Third. For morning whales saw were had seed can't divide
-                it light shall moveth, us blessed given wherein.
+                Third. For morning whales saw were had seed can't Boxide it
+                light shall moveth, us blessed given wherein.
               </Typography>
 
-              <Link
-                href="/history"
-                className="font-medium underline"
-              >
+              <Link href="/history" className="font-medium underline">
                 Discover more
               </Link>
             </Box>
