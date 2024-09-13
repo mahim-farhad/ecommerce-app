@@ -16,13 +16,9 @@ export default async function Products() {
     <Section>
       <Container>
         <Box className="mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <Typography className="text-gray-400">
-            Top Sellling
-          </Typography>
+          <Typography className="text-gray-400">Top Sellling</Typography>
 
-          <Typography type="h2">
-            Featured Products
-          </Typography>
+          <Typography type="h2">Featured Products</Typography>
         </Box>
 
         <Grid className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
@@ -30,11 +26,17 @@ export default async function Products() {
             <GridItem key={product?.id} className="col-span-1">
               <ProductCard
                 id={product?.attributes?.productId}
-                image={product?.attributes?.productImage || "https://www.thebengalstore.com/uploads/product/image/134334334466934661722066280.jpg"}
+                image={
+                  product?.attributes?.productImage ||
+                  "https://www.thebengalstore.com/uploads/product/image/134334334466934661722066280.jpg"
+                }
                 name={product?.attributes?.productName}
                 slug={product?.attributes?.productSlug}
                 description={product?.attributes?.productDescription}
-                category={product?.attributes?.categories?.data?.[0]?.attributes?.categoryName}
+                category={
+                  product?.attributes?.categories?.data?.[0]?.attributes
+                    ?.categoryName
+                }
                 vendor={product?.attributes?.vendor?.data}
                 price={product?.attributes?.productPrice}
               />
