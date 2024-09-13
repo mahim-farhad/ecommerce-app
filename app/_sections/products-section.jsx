@@ -1,38 +1,40 @@
-// import { getProducts } from "@api/products";
+import { getProducts } from "@api/products";
 
 import Typography from "@components/ui/typography";
 
 import Section from "@components/layouts/section";
 import Container from "@components/layouts/container";
 import Box from "@components/layouts/box";
-import {
-  Grid, GridItem
-} from "@components/layouts/grid";
+import { Grid, GridItem } from "@components/layouts/grid";
 
 import ProductCard from "@components/cards/product-card";
 
-export async function getProducts() {
-  try {
-    const res = await fetch(
-      `https://bangladesh-handicrafts-server.onrender.com/api/products?populate=*`,
-      {
-        next: { revalidate: 10 },
-      }
-    );
-    if (!res.ok) {
-      throw new Error('Failed to fetch data');
-    }
+export const revalidate = 10;
 
-    const data = await res.json();
-    return data;
-  } catch (error) {
-    console.error(`Error fetching products: ${error}`);
-    return null;
-  }
-}
+export const dynamicParams = true;
+
+// export async function getProducts() {
+//   try {
+//     const res = await fetch(
+//       `https://bangladesh-handicrafts-server.onrender.com/api/products?populate=*`,
+//       {
+//         next: { revalidate: 10 },
+//       }
+//     );
+//     if (!res.ok) {
+//       throw new Error('Failed to fetch data');
+//     }
+
+//     const data = await res.json();
+//     return data;
+//   } catch (error) {
+//     console.error(`Error fetching products: ${error}`);
+//     return null;
+//   }
+// }
 
 export default async function Products() {
-  const productsData = await getProducts(1, 20);
+  const productsData = await getProducts();
 
   return (
     <Section>
