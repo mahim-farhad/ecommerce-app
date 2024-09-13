@@ -1,4 +1,4 @@
-import { getVendorsAxios } from "@api/vendors";
+import { getVendors } from "@api/vendors";
 
 import Typography from "@components/ui/typography";
 
@@ -10,7 +10,7 @@ import { Grid, GridItem } from "@components/layouts/grid";
 import VendorCard from "@components/cards/vendor-card";
 
 export default async function VendorsSection() {
-  const vendorsData = await getVendorsAxios();
+  const vendorsData = await getVendors();
 
   return (
     <Section>

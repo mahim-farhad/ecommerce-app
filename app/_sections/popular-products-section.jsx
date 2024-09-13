@@ -1,4 +1,4 @@
-import { getProductsAxios } from "@api/products";
+import { getProducts } from "@api/products";
 
 import Typography from "@components/ui/typography";
 
@@ -9,7 +9,7 @@ import Box from "@components/layouts/box";
 import ProductsCarousel from "../_components/products-carousel";
 
 export default async function PopularProducts() {
-  const productsData = await getProductsAxios();
+  const productsData = await getProducts();
 
   return (
     <Section>

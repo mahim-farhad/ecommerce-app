@@ -1,4 +1,4 @@
-import { getProductsAxios } from "@api/products";
+import { getProducts } from "@api/products";
 
 import Typography from "@components/ui/typography";
 
@@ -10,7 +10,7 @@ import { Grid, GridItem } from "@components/layouts/grid";
 import ProductCard from "@components/cards/product-card";
 
 export default async function Products() {
-  const productsData = await getProductsAxios();
+  const productsData = await getProducts();
 
   return (
     <Section>
