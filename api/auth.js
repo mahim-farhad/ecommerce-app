@@ -9,9 +9,14 @@ export async function registerUser(userData) {
 }
 
 export async function authenticateUser(userData) {
-  const res = await axiosInstance.post("/auth/local", {
-    ...userData,
-  });
+  try {
+    const res = await axiosInstance.post("/auth/local", {
+      ...userData,
+    });
 
-  return res.data;
+
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
 }

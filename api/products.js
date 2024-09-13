@@ -1,27 +1,24 @@
-import axiosInstance from "@libs/axios/axiosInstance";
+// import axiosInstance from "@libs/axios/axiosInstance";
 
-import axiosSecure from "@libs/axios/axiosSecure";
-import { delayExecute } from "@utils/functions";
+// import axiosSecure from "@libs/axios/axiosSecure";
 
-const noCacheHeaders = {
-  headers: { cache: "no-store" },
-};
+const noCacheHeaders = { headers: { cache: "no-store" }, };
 
-export async function createProduct(productData) {
-  const res = await axiosSecure.post("/products", {
-    data: { ...productData },
-  });
+// export async function createProduct(productData) {
+//   const res = await axiosSecure.post("/products", {
+//     data: { ...productData },
+//   });
 
-  return res.data;
-}
+//   return res.data;
+// }
 
-export async function updateProduct(productId, productData) {
-  const res = await axiosSecure.put(`/users/${productId}`, {
-    data: { ...productData },
-  });
+// export async function updateProduct(productId, productData) {
+//   const res = await axiosSecure.put(`/users/${productId}`, {
+//     data: { ...productData },
+//   });
 
-  return res.data;
-}
+//   return res.data;
+// }
 
 export async function getProduct(productId) {
   try {
@@ -91,32 +88,30 @@ export async function getProducts() {
   }
 }
 
-export async function getProductsAxios() {
-  try {
-    delayExecute(3000);
+// export async function getProductsAxios() {
+//   try {
+//     const res = await axiosInstance.get("/products?populate=*", {
+//       noCacheHeaders,
+//     });
 
-    const res = await axiosInstance.get("/products?populate=*", {
-      noCacheHeaders,
-    });
+//     return res.data;
+//   } catch (error) {
+//     let errorMessage = "";
 
-    return res.data;
-  } catch (error) {
-    let errorMessage = "";
+//     if (error.response) {
+//       const { status, data } = error.response;
 
-    if (error.response) {
-      const { status, data } = error.response;
+//       if (status === 400 || status === 429) {
+//         const serverErrorMessage = data?.error?.message || errorMessage;
 
-      if (status === 400 || status === 429) {
-        const serverErrorMessage = data?.error?.message || errorMessage;
+//         errorMessage = serverErrorMessage;
+//       } else {
+//         errorMessage = data;
+//       }
+//     } else {
+//       errorMessage = error.message || "Something went wrong. Please try again.";
+//     }
 
-        errorMessage = serverErrorMessage;
-      } else {
-        errorMessage = data;
-      }
-    } else {
-      errorMessage = error.message || "Something went wrong. Please try again.";
-    }
-
-    return errorMessage;
-  }
-}
+//     return errorMessage;
+//   }
+// }

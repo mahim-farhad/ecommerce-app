@@ -9,8 +9,6 @@ import { createSession, deleteSession } from "@libs/session";
 
 import { registerUser, authenticateUser } from "@api/auth";
 
-import { delayExecute } from "@utils/functions";
-
 export async function registerAction(prevState, formData) {
   const data = Object.fromEntries(formData.entries());
 
@@ -73,8 +71,6 @@ export async function registerAction(prevState, formData) {
 }
 
 export async function loginAction(prevState, formData) {
-  await delayExecute(1000);
-
   const validatedFields = loginZodSchema.safeParse({
     identifier: formData.get("identifier"),
     password: formData.get("password"),

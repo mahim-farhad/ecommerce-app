@@ -1,26 +1,24 @@
-import axiosInstance from "@libs/axios/axiosInstance";
+// import axiosInstance from "@libs/axios/axiosInstance";
 
-import axiosSecure from "@libs/axios/axiosSecure";
+// import axiosSecure from "@libs/axios/axiosSecure";
 
-const noCacheHeaders = {
-  headers: { cache: "no-store" },
-};
+const noCacheHeaders = { headers: { cache: "no-store" }, };
 
-export async function createVendor(vendorData) {
-  const res = await axiosSecure.post("/vendors", {
-    data: { ...vendorData },
-  });
+// export async function createVendor(vendorData) {
+//   const res = await axiosSecure.post("/vendors", {
+//     data: { ...vendorData },
+//   });
 
-  return res.data;
-}
+//   return res.data;
+// }
 
-export async function updateVendor(vendorId, vendorData) {
-  const res = await axiosSecure.put(`/users/${vendorId}`, {
-    data: { ...vendorData },
-  });
+// export async function updateVendor(vendorId, vendorData) {
+//   const res = await axiosSecure.put(`/users/${vendorId}`, {
+//     data: { ...vendorData },
+//   });
 
-  return res.data;
-}
+//   return res.data;
+// }
 
 export async function getVendor(vendorId) {
   try {
@@ -90,30 +88,30 @@ export async function getVendors() {
   }
 }
 
-export async function getVendorsAxios() {
-  try {
-    const res = await axiosInstance.get("/vendors?populate=*", {
-      noCacheHeaders,
-    });
+// export async function getVendorsAxios() {
+//   try {
+//     const res = await axiosInstance.get("/vendors?populate=*", {
+//       noCacheHeaders,
+//     });
 
-    return res.data;
-  } catch (error) {
-    let errorMessage = "";
+//     return res.data;
+//   } catch (error) {
+//     let errorMessage = "";
 
-    if (error.response) {
-      const { status, data } = error.response;
+//     if (error.response) {
+//       const { status, data } = error.response;
 
-      if (status === 400 || status === 429) {
-        const serverErrorMessage = data?.error?.message || errorMessage;
+//       if (status === 400 || status === 429) {
+//         const serverErrorMessage = data?.error?.message || errorMessage;
 
-        errorMessage = serverErrorMessage;
-      } else {
-        errorMessage = data;
-      }
-    } else {
-      errorMessage = error.message || "Something went wrong. Please try again.";
-    }
+//         errorMessage = serverErrorMessage;
+//       } else {
+//         errorMessage = data;
+//       }
+//     } else {
+//       errorMessage = error.message || "Something went wrong. Please try again.";
+//     }
 
-    return errorMessage;
-  }
-}
+//     return errorMessage;
+//   }
+// }
