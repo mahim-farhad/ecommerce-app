@@ -14,6 +14,8 @@ import ProductCard from "@components/cards/product-card";
 export default async function Products() {
   const productsData = await getProducts(1, 20);
 
+  console.log(productsData);
+
   return (
     <Section>
       <Container>
