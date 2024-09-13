@@ -7,6 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Typography from "@components/ui/typography";
 import Icon from "@components/ui/icon";
 import Link from "@components/ui/link";
+import Button from "@components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -14,30 +15,25 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@components/ui/carousel";
-import {
-  Card,
-  CardHeader,
-  CardContent
-} from "@components/ui/card";
+import { Card, CardHeader, CardContent } from "@components/ui/card";
 
 import Section from "@components/layouts/section";
 import Container from "@components/layouts/container";
 import Box from "@components/layouts/box";
 import { Grid, GridItem } from "@components/layouts/grid";
-import Button from "@components/ui/button";
 
 export default function BannerSection() {
   const carouselOptions = {
-    align: 'start',
+    align: "start",
     loop: true,
     skipSnaps: false,
     dragFree: false,
-    containScroll: 'trimSnaps',
+    containScroll: "trimSnaps",
     draggable: true,
     speed: 10,
     dragThreshold: 1,
-    slidesToScroll: 1
-  }
+    slidesToScroll: 1,
+  };
 
   return (
     <Section className="xl:py-8">
@@ -45,7 +41,7 @@ export default function BannerSection() {
         <Grid
           className={clsx(
             "grid-cols-1 md:grid-cols-2 xl:grid-cols-3",
-            "gap-4 lg:gap-8",
+            "gap-4 lg:gap-8"
           )}
         >
           <GridItem className="col-span-full xl:col-span-full">
@@ -60,40 +56,31 @@ export default function BannerSection() {
               <CarouselContent>
                 {/* {productsData?.products?.map((product) => ( */}
                 <CarouselItem>
-                  <Card
-                    className={clsx(
-                      "overflow-hidden",
-                      "group"
-                    )}
-                  >
+                  <Card className={clsx("overflow-hidden", "group")}>
                     <CardHeader>
                       <Link
                         className={clsx(
                           "w-full h-full",
                           "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
-                          "overflow-hidden",
+                          "overflow-hidden"
                         )}
                         style={{
                           backgroundImage:
                             "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
                           backgroundPosition: "42% top",
                           backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat"
+                          backgroundRepeat: "no-repeat",
                         }}
                       />
                     </CardHeader>
 
-                    <CardContent
-                      className={clsx(
-                        "z-10 absolute bottom-0",
-                      )}
-                    >
+                    <CardContent className={clsx("z-10 absolute bottom-0")}>
                       <Box
                         className={clsx(
                           "w-full sm:w-auto",
                           "py-4 md:py-8 px-6 md:px-10",
                           "m-4 lg:m-8",
-                          "bg-black bg-opacity-75",
+                          "bg-black bg-opacity-75"
                         )}
                       >
                         <Typography
@@ -107,11 +94,7 @@ export default function BannerSection() {
                           Puja 2k24 collection
                         </Typography>
 
-                        <Button
-                          size="sm"
-                          variant="text"
-                          asChild
-                        >
+                        <Button size="sm" variant="text" asChild>
                           <Link
                             href="/shop"
                             className={clsx(
@@ -119,11 +102,10 @@ export default function BannerSection() {
                               "h-auto p-0",
                               "uppercase",
                               "overflow-visible",
-                              "text-gray-200",
+                              "text-gray-200"
                             )}
                           >
                             Shop Now
-
                             <Icon
                               name="ArrowRight"
                               size="sm"
@@ -140,40 +122,31 @@ export default function BannerSection() {
                 </CarouselItem>
 
                 <CarouselItem>
-                  <Card
-                    className={clsx(
-                      "overflow-hidden",
-                      "group"
-                    )}
-                  >
+                  <Card className={clsx("overflow-hidden", "group")}>
                     <CardHeader>
                       <Link
                         className={clsx(
                           "w-full h-full",
                           "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
-                          "overflow-hidden",
+                          "overflow-hidden"
                         )}
                         style={{
                           backgroundImage:
                             "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
                           backgroundPosition: "42% top",
                           backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat"
+                          backgroundRepeat: "no-repeat",
                         }}
                       />
                     </CardHeader>
 
-                    <CardContent
-                      className={clsx(
-                        "z-10 absolute bottom-0",
-                      )}
-                    >
+                    <CardContent className={clsx("z-10 absolute bottom-0")}>
                       <Box
                         className={clsx(
                           "w-full sm:w-auto",
                           "py-4 md:py-8 px-6 md:px-10",
                           "m-4 lg:m-8",
-                          "bg-black bg-opacity-75",
+                          "bg-black bg-opacity-75"
                         )}
                       >
                         <Typography
@@ -187,11 +160,7 @@ export default function BannerSection() {
                           Puja 2k24 collection
                         </Typography>
 
-                        <Button
-                          size="sm"
-                          variant="text"
-                          asChild
-                        >
+                        <Button size="sm" variant="text" asChild>
                           <Link
                             href="/shop"
                             className={clsx(
@@ -199,11 +168,10 @@ export default function BannerSection() {
                               "h-auto p-0",
                               "uppercase",
                               "overflow-visible",
-                              "text-gray-200",
+                              "text-gray-200"
                             )}
                           >
                             Shop Now
-
                             <Icon
                               name="ArrowRight"
                               size="sm"
@@ -220,40 +188,31 @@ export default function BannerSection() {
                 </CarouselItem>
 
                 <CarouselItem>
-                  <Card
-                    className={clsx(
-                      "overflow-hidden",
-                      "group"
-                    )}
-                  >
+                  <Card className={clsx("overflow-hidden", "group")}>
                     <CardHeader>
                       <Link
                         className={clsx(
                           "w-full h-full",
                           "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
-                          "overflow-hidden",
+                          "overflow-hidden"
                         )}
                         style={{
                           backgroundImage:
                             "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
                           backgroundPosition: "42% top",
                           backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat"
+                          backgroundRepeat: "no-repeat",
                         }}
                       />
                     </CardHeader>
 
-                    <CardContent
-                      className={clsx(
-                        "z-10 absolute bottom-0",
-                      )}
-                    >
+                    <CardContent className={clsx("z-10 absolute bottom-0")}>
                       <Box
                         className={clsx(
                           "w-full sm:w-auto",
                           "py-4 md:py-8 px-6 md:px-10",
                           "m-4 lg:m-8",
-                          "bg-black bg-opacity-75",
+                          "bg-black bg-opacity-75"
                         )}
                       >
                         <Typography
@@ -267,11 +226,7 @@ export default function BannerSection() {
                           Puja 2k24 collection
                         </Typography>
 
-                        <Button
-                          size="sm"
-                          variant="text"
-                          asChild
-                        >
+                        <Button size="sm" variant="text" asChild>
                           <Link
                             href="/shop"
                             className={clsx(
@@ -279,11 +234,10 @@ export default function BannerSection() {
                               "h-auto p-0",
                               "uppercase",
                               "overflow-visible",
-                              "text-gray-200",
+                              "text-gray-200"
                             )}
                           >
                             Shop Now
-
                             <Icon
                               name="ArrowRight"
                               size="sm"

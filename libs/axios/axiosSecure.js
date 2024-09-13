@@ -9,7 +9,6 @@ const axiosSecure = axios.create({
     "Content-type": "application/json",
     Authorization: `Bearer ${process.env.BACKEND_API}`,
   },
-  next: { revalidate: 10 },
 });
 
 axiosSecure.interceptors.request.use(
