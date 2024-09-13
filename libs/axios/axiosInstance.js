@@ -7,7 +7,8 @@ const axiosInstance = axios.create({
     "Content-type": "application/json",
     "Authorization":
       `Bearer ${process.env.NEXT_PUBLIC_BACKEND_API}`
-  }
+  },
+  next: { revalidate: 10 }
 });
 
 export default axiosInstance;

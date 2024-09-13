@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import getAuthToken from '@utils/services/auth-token';
 
 const axiosSecure = axios.create({

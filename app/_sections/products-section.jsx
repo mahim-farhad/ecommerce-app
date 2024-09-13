@@ -9,30 +9,6 @@ import { Grid, GridItem } from "@components/layouts/grid";
 
 import ProductCard from "@components/cards/product-card";
 
-export const revalidate = 10;
-
-export const dynamicParams = true;
-
-// export async function getProducts() {
-//   try {
-//     const res = await fetch(
-//       `https://bangladesh-handicrafts-server.onrender.com/api/products?populate=*`,
-//       {
-//         next: { revalidate: 10 },
-//       }
-//     );
-//     if (!res.ok) {
-//       throw new Error('Failed to fetch data');
-//     }
-
-//     const data = await res.json();
-//     return data;
-//   } catch (error) {
-//     console.error(`Error fetching products: ${error}`);
-//     return null;
-//   }
-// }
-
 export default async function Products() {
   const productsData = await getProducts();
 
