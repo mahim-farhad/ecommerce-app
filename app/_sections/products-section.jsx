@@ -1,4 +1,4 @@
-import { getProducts } from "@api/products";
+// import { getProducts } from "@api/products";
 
 import Typography from "@components/ui/typography";
 
@@ -10,6 +10,26 @@ import {
 } from "@components/layouts/grid";
 
 import ProductCard from "@components/cards/product-card";
+
+export async function getProducts() {
+  try {
+    const res = await fetch(
+      `https://bangladesh-handicrafts-server.onrender.com/api/products?populate=*`,
+      {
+        next: { revalidate: 10 },
+      }
+    );
+    if (!res.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching products: ${error}`);
+    return null;
+  }
+}
 
 export default async function Products() {
   const productsData = await getProducts(1, 20);
