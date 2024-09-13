@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 import clsx from "clsx";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full border border-gray-200 px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:border-gray-800 dark:focus:ring-gray-300",
+  "inline-flex items-center gap-2 h-7 uppercase shadow-md rounded-full border border-gray-200 px-2.5 py-0.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:border-gray-800 dark:focus:ring-gray-300",
   {
     variants: {
       variant: {
@@ -20,11 +20,11 @@ const badgeVariants = cva(
       variant: "default",
     },
   }
-)
+);
 
 export default function Badge({
-  className,
   variant,
+  className = "",
   ...props
 }) {
   return (

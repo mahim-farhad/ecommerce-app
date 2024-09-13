@@ -28,9 +28,8 @@ function NotFound() {
             )}
           >
             <Typography
-              type="h1"
+              type="h3"
               className={clsx(
-                "text-[10rem]",
                 "opacity-25",
               )}
             >
@@ -40,8 +39,6 @@ function NotFound() {
             <Typography
               type="h1"
               className={clsx(
-                "-mt-32",
-                "!text-[7rem]",
                 "tracking-widest",
               )}
             >

@@ -3,9 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [{
       protocol: "https",
-      hostname: "banglacraft.org",
-      port: "",
-      pathname: "/wp-content/uploads/**",
+      hostname: "**",
     }],
   },
 };

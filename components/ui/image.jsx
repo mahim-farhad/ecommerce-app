@@ -19,8 +19,8 @@ export default function Image({
       src={src}
       alt={alt}
       loading="lazy"
-      width={0}
-      height={0}
+      width={400}
+      height={400}
       className={imgClasses}
       {...props}
     />

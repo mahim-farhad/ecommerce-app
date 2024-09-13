@@ -38,21 +38,15 @@ export default function ProductsCarousel({ productsData }) {
         {productsData?.data?.map((product) => (
           <CarouselItem
             key={product?.id}
-            className="basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            className="basis-1/2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
           >
             <ProductCard
               id={product?.attributes?.productId}
-              image={
-                product?.attributes?.productImage ||
-                "https://www.thebengalstore.com/uploads/product/image/134334334466934661722066280.jpg"
-              }
+              image={product?.attributes?.productImage}
               name={product?.attributes?.productName}
               slug={product?.attributes?.productSlug}
               description={product?.attributes?.productDescription}
-              category={
-                product?.attributes?.categories?.data?.[0]?.attributes
-                  ?.categoryName
-              }
+              category={product?.attributes?.categories?.data?.[0]?.attributes?.categoryName}
               vendor={product?.attributes?.vendor?.data}
               price={product?.attributes?.productPrice}
             />

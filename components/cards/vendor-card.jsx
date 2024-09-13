@@ -4,32 +4,25 @@ import PropTypes from "prop-types";
 
 import clsx from "clsx";
 
-import { Heart, Eye } from "lucide-react";
-
 // import { useWishlist } from "@contexts/WishlistContext";
 
 import Icon from "@components/ui/icon";
+import CustomIcon from "@components/ui/custom-icon";
 import Link from "@components/ui/link";
 import Typography from "@components/ui/typography";
 import Image from "@components/ui/image";
 import Button from "@components/ui/button";
 import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter
+  Card, CardHeader, CardTitle, CardContent
 } from "@components/ui/card";
 
 import Box from "@components/layouts/box";
-import CustomIcon from "@components/ui/custom-icon";
 
 export default function VendorCard({
   id,
   image,
   name,
   slug,
-  brand,
   yop,
   nop,
   likes
@@ -113,13 +106,13 @@ export default function VendorCard({
             rounded
           // onClick={() => addToWishlist({ id, title, price })}
           >
-            {/* <Icon
+            <Icon
               name="Heart"
               className={clsx(
-                Boolean(isItemExist) &&
+                // Boolean(isItemExist) &&
                 "text-primary fill-primary"
               )}
-            /> */}
+            />
           </Button>
         </Box>
 
@@ -152,6 +145,7 @@ export default function VendorCard({
               <Link
                 href={`/store/${slug}`}
                 className={clsx(
+                  "mb-1.5",
                   "text-sm leading-none font-semibold",
                   "uppercase",
                   "text-primary",
@@ -161,15 +155,17 @@ export default function VendorCard({
               </Link>
             </CardTitle>
 
-            <Typography
-              type="small"
+            <Box
               className={clsx(
-                "font-medium",
-                "text-gray-400",
+                "flex gap-2 items-center",
+                "font-serif text-sm leading-none font-semibold",
+                "text-gray-400 bg-white dark:bg-white/5"
               )}
             >
-              {nop || 0} Items
-            </Typography>
+              <span>{nop} Items</span>
+              {" "}{"|"}{" "}
+              <span>{likes} Likes</span>
+            </Box>
           </Box>
         </Box>
       </CardContent>
@@ -177,11 +173,12 @@ export default function VendorCard({
   );
 }
 
-// VendorCard.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   image: PropTypes.string,
-//   name: PropTypes.string,
-//   slug: PropTypes.string,
-//   category: PropTypes.string,
-//   price: PropTypes.number
-// };
+VendorCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  slug: PropTypes.string,
+  image: PropTypes.string,
+  yop: PropTypes.number,
+  nop: PropTypes.number,
+  likes: PropTypes.number
+};

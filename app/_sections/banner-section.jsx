@@ -7,6 +7,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Typography from "@components/ui/typography";
 import Icon from "@components/ui/icon";
 import Link from "@components/ui/link";
+import Image from "@components/ui/image";
 import Button from "@components/ui/button";
 import {
   Carousel,
@@ -263,11 +264,9 @@ export default function BannerSection() {
             <Card>
               <CardHeader>
                 <Link>
-                  <img
+                  <Image
                     src="https://www.thebengalstore.com/uploads/blog/133675404342430351724740478.jpg"
                     alt=""
-                    layout="fill"
-                    objectFit="cover"
                   />
                 </Link>
               </CardHeader>
@@ -278,11 +277,9 @@ export default function BannerSection() {
             <Card>
               <CardHeader>
                 <Link>
-                  <img
+                  <Image
                     src="https://www.thebengalstore.com/uploads/blog/102223845091051101724220891.jpg"
                     alt=""
-                    layout="fill"
-                    objectFit="cover"
                   />
                 </Link>
               </CardHeader>
@@ -293,11 +290,9 @@ export default function BannerSection() {
             <Card>
               <CardHeader>
                 <Link>
-                  <img
+                  <Image
                     src="https://www.thebengalstore.com/uploads/blog/217779815599986091720681809.jpg"
                     alt=""
-                    layout="fill"
-                    objectFit="cover"
                   />
                 </Link>
               </CardHeader>

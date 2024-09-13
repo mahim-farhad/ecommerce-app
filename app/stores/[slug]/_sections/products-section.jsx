@@ -1,5 +1,3 @@
-import productsData from "@data/products.json";
-
 import Typography from "@components/ui/typography";
 
 import Section from "@components/layouts/section";
@@ -11,22 +9,23 @@ import {
 
 import ProductCard from "@components/cards/product-card";
 
-export default function ProductsSection() {
+export default function ProductsSection({ productsData }) {
+  console.log(productsData.data)
   return (
     <Section>
       <Container>
         <Grid className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
-          {productsData?.products?.map((product) => (
+          {productsData?.data?.map((product) => (
             <GridItem key={product?.id} className="col-span-1">
               <ProductCard
-                id={product?.id}
-                // image={"https://i.ibb.co.com/rxrf3sZ/file.png"}
-                image={"https://www.thebengalstore.com/uploads/product/image/134334334466934661722066280.jpg"}
-                title={product.description}
-                slug={product?.name}
-                brand={product?.vendor}
-                category={product?.category}
-                price={product?.price}
+                id={product?.attributes?.productId}
+                image={product?.attributes?.productImage}
+                name={product?.attributes?.productName}
+                slug={product?.attributes?.productSlug}
+                description={product?.attributes?.productDescription}
+                category={product?.attributes?.categories?.data?.[0]?.attributes?.categoryName}
+                vendor={product?.attributes?.vendor?.data}
+                price={product?.attributes?.productPrice}
               />
             </GridItem>
           ))}

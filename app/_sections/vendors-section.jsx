@@ -24,15 +24,12 @@ export default async function VendorsSection() {
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {vendorsData?.data?.map((vendor) => (
             <GridItem key={vendor?.id} className="col-span-1">
-              {console.log(vendor?.attributes)}
               <VendorCard
                 id={vendor?.attributes?.vendorId}
-                // image={"https://woocommerce.com/wp-content/uploads/2020/07/blog-fb-Multivendor@2x.jpg"}
-                image={
-                  "https://yevgenysim-turkey.github.io/shopper/assets/img/brands/black/river-island.svg"
-                }
+                image={vendor?.attributes?.vendorBanner}
                 name={vendor?.attributes?.vendorName}
                 slug={vendor?.attributes?.vendorSlug}
+                logo={vendor?.attributes?.vendorLogo}
                 yop={vendor?.attributes?.yearsOfOperation}
                 nop={vendor?.attributes?.products?.data?.length}
                 likes={vendor?.attributes?.likes}

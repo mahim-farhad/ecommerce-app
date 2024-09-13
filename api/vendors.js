@@ -20,10 +20,11 @@
 //   return res.data;
 // }
 
-export async function getVendor(vendorId) {
+export async function getVendor(slug) {
   try {
     const response = await fetch(
-      `${process.env.BACKEND_URL}/vendors/${vendorId}?populate=*`,
+      // `${process.env.BACKEND_URL}/vendors/${vendorId}?populate=*`,
+      `${process.env.BACKEND_URL}/vendors?populate=*&[filters][vendorSlug]=${slug}`,
       {
         method: "GET",
         headers: {
@@ -43,7 +44,23 @@ export async function getVendor(vendorId) {
 
     return data;
   } catch (error) {
-    throw new Error(`Error fetching vendors with products:${error}`);
+    let errorMessage = "";
+
+    if (error.response) {
+      const { status, data } = error.response;
+
+      if (status === 400 || status === 429) {
+        const serverErrorMessage = data?.error?.message || errorMessage;
+
+        errorMessage = serverErrorMessage;
+      } else {
+        errorMessage = data;
+      }
+    } else {
+      errorMessage = error.message || "Something went wrong. Please try again.";
+    }
+
+    return errorMessage;
   }
 }
 

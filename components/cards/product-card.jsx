@@ -51,23 +51,24 @@ export default function ProductCard({
             "z-10 absolute",
             "top-2 sm:top-4 left-2 sm:left-4",
             "flex gap-2 items-center",
-            "py-1 px-2",
-            "font-serif text-sm font-semibold",
-            "text-gray-400 bg-white dark:bg-white/5"
+            "py-1.5  px-3",
+            "font-serif text-sm leading-none font-bold",
+            "text-primary dark:text-white",
+            "bg-white dark:bg-black"
           )}
         >
           <span>4.5</span>
           <Icon
             name="Star"
             size="xs"
-            className="text-primary"
+            className="text-primary dark:text-white"
           />
           {" "}{"|"}{" "}
           <span>99</span>
           <Icon
             name="MessageSquareDiff"
             size="xs"
-            className="text-primary"
+            className="text-primary dark:text-white"
           />
         </Box>
 
@@ -78,7 +79,7 @@ export default function ProductCard({
             "bg-gray-50 dark:bg-white/5"
           )}
         >
-          <img
+          <Image
             src={image}
             alt={slug}
             className={clsx(
@@ -91,7 +92,7 @@ export default function ProductCard({
         <Box
           className={clsx(
             "z-10 absolute top-4 -right-10",
-            "flex flex-col gap-2",
+            "hidden sm:flex flex-col gap-2",
             "group-hover:right-4",
             "transition-all duration-300 ease-in-out"
           )}
@@ -115,7 +116,7 @@ export default function ProductCard({
             size="sm"
             color="white"
             iconOnly
-            onClick={() => addToCart({ id, name, price })}
+            onClick={() => addToCart({ id, image, name, price })}
           >
             <Icon name="ShoppingBag" />
           </Button>
@@ -125,7 +126,7 @@ export default function ProductCard({
             color="white"
             iconOnly
           >
-            <Icon name="MoveUpRight" />
+            <Icon name="Eye" />
           </Button>
         </Box>
 
@@ -141,6 +142,7 @@ export default function ProductCard({
             color="black"
             iconOnly
             className="shadow-md"
+            onClick={() => ""}
           >
             <Icon name="Plus" />
           </Button>
@@ -154,18 +156,18 @@ export default function ProductCard({
         )}
       >
         <Link
-          href={`/stores/${vendor?.attributes.vendorSlug}`}
+          href={`/stores/${vendor?.attributes.vendorSlug || slug}`}
           className={clsx(
             "text-sm leading-5 font-semibold",
             "uppercase",
             "text-primary",
           )}
         >
-          {vendor?.attributes.vendorName}
+          {vendor?.attributes.vendorName || name}
         </Link>
 
         <Link
-          href={`/store/${slug}`}
+          href={`/shop/${slug}`}
           className={clsx(
             "block",
             "my-1 sm:my-2",
