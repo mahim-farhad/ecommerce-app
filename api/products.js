@@ -2,7 +2,7 @@
 
 // import axiosSecure from "@libs/axios/axiosSecure";
 
-const noCacheHeaders = { headers: { cache: "no-store" }, };
+// const noCacheHeaders = { headers: { cache: "no-store" }, };
 
 // export async function createProduct(productData) {
 //   const res = await axiosSecure.post("/products", {
@@ -30,7 +30,8 @@ export async function getProduct(productId) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 60 },
+        cache: "no-store",
+        // next: { revalidate: 60 },
       }
     );
 
@@ -56,7 +57,8 @@ export async function getProducts() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 60 },
+        cache: "no-store",
+        // next: { revalidate: 60 },
       }
     );
 

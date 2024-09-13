@@ -2,7 +2,7 @@
 
 // import axiosSecure from "@libs/axios/axiosSecure";
 
-const noCacheHeaders = { headers: { cache: "no-store" }, };
+// const noCacheHeaders = { headers: { cache: "no-store" }, };
 
 // export async function createVendor(vendorData) {
 //   const res = await axiosSecure.post("/vendors", {
@@ -30,7 +30,8 @@ export async function getVendor(vendorId) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 60 },
+        cache: "no-store",
+        // next: { revalidate: 60 },
       }
     );
 
@@ -56,7 +57,8 @@ export async function getVendors() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 60 },
+        cache: "no-store",
+        // next: { revalidate: 60 },
       }
     );
 
