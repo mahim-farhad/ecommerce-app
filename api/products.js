@@ -30,8 +30,7 @@ export async function getProduct(productId) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        cache: "no-store",
-        // next: { revalidate: 60 },
+        next: { revalidate: 60 },
       }
     );
 
@@ -57,8 +56,7 @@ export async function getProducts() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        cache: "no-store",
-        // next: { revalidate: 60 },
+        next: { revalidate: 60 },
       }
     );
 

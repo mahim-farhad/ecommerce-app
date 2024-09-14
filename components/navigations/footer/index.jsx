@@ -5,7 +5,10 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import {
-  customerCare, legalServices, socials, paymentMethods
+  customerCare,
+  legalServices,
+  socials,
+  paymentMethods,
 } from "@utils/objects";
 
 import CustomIcon from "@components/ui/custom-icon";
@@ -19,17 +22,10 @@ import Box from "@components/layouts/box";
 
 function Brand() {
   return (
-    <Box
-      className={clsx(
-        "flex gap-4 items-center",
-      )}
-    >
+    <Box className={clsx("flex gap-4 items-center")}>
       <CustomIcon
         name="brand"
-        className={clsx(
-          "w-12 md:w-16",
-          "h-12 md:h-16",
-        )}
+        className={clsx("w-12 md:w-16", "h-12 md:h-16", "text-white")}
       />
 
       <Box>
@@ -57,7 +53,7 @@ function Brand() {
         </Typography>
       </Box>
     </Box>
-  )
+  );
 }
 
 function CustomerCare() {
@@ -67,19 +63,14 @@ function CustomerCare() {
         type="h6"
         className={clsx(
           "mt-1.5 mb-3",
-          "!text-base font-medium",
-          "text-gray-100"
+          "!text-base font-semibold",
+          "text-white"
         )}
       >
         Customer Care
       </Typography>
 
-      <Box
-        className={clsx(
-          "flex",
-          "gap-x-8"
-        )}
-      >
+      <Box className={clsx("flex", "gap-x-8")}>
         <List>
           {customerCare?.map((customerCare) => (
             <ListItem key={customerCare?.id}>
@@ -88,12 +79,13 @@ function CustomerCare() {
                 className={clsx(
                   "relative inline-block py-1",
                   "text-sm font-medium",
+                  "text-muted-foreground hover:text-white",
                   "after:content-['']",
                   "after:absolute after:left-0 after:bottom-1",
                   "after:w-0 after:h-[1px]",
                   "after:bg-white",
                   "hover:after:w-full",
-                  "after:transition-all after:duration-200",
+                  "after:transition-all after:duration-200"
                 )}
               >
                 {customerCare?.name}
@@ -110,12 +102,13 @@ function CustomerCare() {
                 className={clsx(
                   "relative inline-block py-1",
                   "text-sm font-medium",
+                  "text-muted-foreground hover:text-white",
                   "after:content-['']",
                   "after:absolute after:left-0 after:bottom-1",
                   "after:w-0 after:h-[1px]",
                   "after:bg-white",
                   "hover:after:w-full",
-                  "after:transition-all after:duration-200",
+                  "after:transition-all after:duration-200"
                 )}
               >
                 {customerCare?.name}
@@ -135,8 +128,8 @@ function LegalServices() {
         type="h6"
         className={clsx(
           "mt-1.5 mb-3",
-          "!text-base font-medium",
-          "text-gray-100"
+          "!text-base font-semibold",
+          "text-white"
         )}
       >
         Legal Services
@@ -150,12 +143,13 @@ function LegalServices() {
               className={clsx(
                 "relative inline-block py-1",
                 "text-sm font-medium",
+                "text-muted-foreground hover:text-white",
                 "after:content-['']",
                 "after:absolute after:right-0 after:bottom-1",
                 "after:w-0 after:h-[1px]",
                 "after:bg-white",
                 "hover:after:w-full",
-                "after:transition-all after:duration-200",
+                "after:transition-all after:duration-200"
               )}
             >
               {legalService?.name}
@@ -170,20 +164,13 @@ function LegalServices() {
 function Socials() {
   return (
     <Box className="mb-2">
-      <List
-        className={clsx(
-          "flex-row flex-wrap",
-          "gap-4",
-        )}
-      >
+      <List className={clsx("flex-row flex-wrap", "gap-4")}>
         {socials?.map((social) => (
           <ListItem key={social?.id}>
             <Link href={social?.path}>
               <CustomIcon
                 name={social?.iconName}
-                className={clsx(
-                  "text-gray-100"
-                )}
+                className={clsx("text-gray-100")}
               />
             </Link>
           </ListItem>
@@ -200,16 +187,14 @@ function Payments() {
         className={clsx(
           "flex-row flex-wrap",
           "gap-2",
-          "justify-start xl:justify-end",
+          "justify-start xl:justify-end"
         )}
       >
         {paymentMethods?.map((paymentMethod) => (
           <ListItem key={paymentMethod?.id}>
             <CustomIcon
               name={paymentMethod?.iconName}
-              className={clsx(
-                "w-10 h-auto"
-              )}
+              className={clsx("w-10 h-auto")}
             />
           </ListItem>
         ))}
@@ -225,7 +210,7 @@ export default function Footer() {
 
   const hideFooter = noNavRoutes.includes(router);
 
-  if (hideFooter) return null;
+  // if (hideFooter) return null;
 
   return (
     <footer>
@@ -236,22 +221,17 @@ export default function Footer() {
             "gap-y-8 xl:gap-y-20",
             "py-8 md:py-12 lg:py-16 xl:py-20",
             "px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20",
-            "text-gray-100",
-            "bg-gray-800 dark:bg-gray-900"
+            "bg-black dark:bg-white/5"
           )}
           style={{
             backgroundImage:
               "url(https://yevgenysim-turkey.github.io/shopper/assets/img/patterns/pattern-2.svg)",
             backgroundPosition: "50%",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
           }}
         >
-          <GridItem
-            className={clsx(
-              "col-span-full xl:col-span-2",
-            )}
-          >
+          <GridItem className={clsx("col-span-full xl:col-span-2")}>
             <Box
               className={clsx(
                 "flex flex-col",
@@ -267,28 +247,24 @@ export default function Footer() {
                   "w-full md:w-3/5 xl:w-full",
                   "pr-8 mb-2",
                   "text-sm",
-                  "text-gray-100"
+                  "text-muted-foreground"
                 )}
               >
-                An Independent Platform to Encourage Individual Businesses
-                in Bangladeshi Handicrafts to Enpower
-                Handicrafts all over the Country
+                An Independent Platform to Encourage Individual Businesses in
+                Bangladeshi Handicrafts to Enpower Handicrafts all over the
+                Country
               </Typography>
 
               <Socials />
             </Box>
           </GridItem>
 
-          <GridItem
-            className={clsx(
-              "col-span-full xl:col-span-3",
-            )}
-          >
+          <GridItem className={clsx("col-span-full xl:col-span-3")}>
             <Box
               className={clsx(
                 "flex flex-col md:flex-row",
                 "gap-y-8 xl:gap-x-20",
-                "justify-start sm:justify-between xl:justify-end",
+                "justify-start sm:justify-between xl:justify-end"
               )}
             >
               <CustomerCare />
@@ -311,16 +287,18 @@ export default function Footer() {
             <Typography
               className={clsx(
                 "text-sm font-medium",
-                "uppercase"
+                "uppercase",
+                "text-muted-foreground"
               )}
             >
-              Copyright © {new Date().getFullYear()},
-              Designed by
+              © {new Date().getFullYear()}, All Rights Reserved. Designed by
               {" <Mahim Farhad/>"}
             </Typography>
           </Box>
 
-          <Box><Payments /></Box>
+          <Box>
+            <Payments />
+          </Box>
         </Box>
       </Container>
     </footer>

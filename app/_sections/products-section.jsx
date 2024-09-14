@@ -31,7 +31,10 @@ export default async function Products() {
                 name={product?.attributes?.productName}
                 slug={product?.attributes?.productSlug}
                 description={product?.attributes?.productDescription}
-                category={product?.attributes?.categories?.data?.[0]?.attributes?.categoryName}
+                category={
+                  product?.attributes?.categories?.data?.[0]?.attributes
+                    ?.categoryName
+                }
                 vendor={product?.attributes?.vendor?.data}
                 price={product?.attributes?.productPrice}
               />

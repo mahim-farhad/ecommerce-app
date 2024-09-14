@@ -9,14 +9,9 @@ export async function registerUser(userData) {
 }
 
 export async function authenticateUser(userData) {
-  try {
-    const res = await axiosInstance.post("/auth/local", {
-      ...userData,
-    });
+  const res = await axiosInstance.post("/auth/local", {
+    ...userData,
+  });
 
-
-    return res.data;
-  } catch (error) {
-    console.log(error);
-  }
+  return res.data;
 }

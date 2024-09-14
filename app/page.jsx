@@ -10,7 +10,7 @@ import BannerSection from "./_sections/banner-section";
 import ProductsSection from "./_sections/products-section";
 import HistorySection from "./_sections/history-section";
 import VendorsSection from "./_sections/vendors-section";
-import PopularProducts from "./_sections/popular-products-section";
+import PopularProductsSection from "./_sections/popular-products-section";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
         </Suspense>
 
         <Suspense fallback={<Skeleton className="w-40 h-60 bg-gray-300" />}>
-          <PopularProducts />
+          <PopularProductsSection />
         </Suspense>
       </Main>
     </>

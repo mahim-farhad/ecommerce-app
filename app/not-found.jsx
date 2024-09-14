@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 import Typography from "@components/ui/typography";
+import Link from "@components/ui/link";
 import Button from "@components/ui/button";
 
 import Main from "@components/layouts/main";
@@ -8,55 +9,33 @@ import Section from "@components/layouts/section";
 import Container from "@components/layouts/container";
 import Box from "@components/layouts/box";
 
-function NotFound() {
+export default function NotFound() {
   return (
-    <Main className="dark:bg-background-dark">
-      <Section
-        className={clsx(
-          "h-[calc(100vh-80px)]",
-        )}
-      >
+    <Main>
+      <Section>
         <Container>
           <Box
             className={clsx(
-              "absolute",
-              "top-1/2",
-              "left-1/2",
-              "-translate-y-1/2",
-              "-translate-x-1/2",
-              "text-center",
+              "flex flex-col items-start md:items-center justify-center",
+              "h-96"
             )}
           >
-            <Typography
-              type="h3"
-              className={clsx(
-                "opacity-25",
-              )}
-            >
-              ERROR
-            </Typography>
+            <Typography type="h2">404. Page Not Found</Typography>
 
             <Typography
-              type="h1"
               className={clsx(
-                "tracking-widest",
+                "sm:w-3/4 md:w-2/4",
+                "pr-4 sm:pr-0 my-4 sm:my-8",
+                "md:text-center",
+                "text-muted-foreground"
               )}
             >
-              404
+              Sorry, we couldn't find the page you where looking for. We suggest
+              that you return to home page.
             </Typography>
 
-            <Typography
-              type="h4"
-              className={clsx(
-                "mb-6",
-                "font-sans font-normal",
-              )}
-            >
-              Page Not Found
-            </Typography>
-
-            <Button size="sm">
-              Go to Home
+            <Button size="sm" asChild>
+              <Link href="/">Go to Home</Link>
             </Button>
           </Box>
         </Container>
@@ -64,5 +43,3 @@ function NotFound() {
     </Main>
   );
 }
-
-export default NotFound;

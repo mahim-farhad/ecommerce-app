@@ -1,9 +1,13 @@
 "use client";
 
 import {
-  useRef, useState, useEffect,
-  createContext, useContext,
-  useCallback, useMemo
+  useRef,
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useCallback,
+  useMemo,
 } from "react";
 
 import PropTypes from "prop-types";
@@ -25,13 +29,9 @@ export function SidebarProvider({ children }) {
 
   const openSidebar = useCallback(() => {
     if (windowSize <= 1024 && !showSidebar && !isTransitioning) {
-      setIsTransitioning(true)
+      setIsTransitioning(true);
 
-      document.body.classList.add(
-        "absolute",
-        "w-full",
-        "overflow-hidden"
-      );
+      document.body.classList.add("absolute", "w-full", "overflow-hidden");
 
       setShowBackdrop(true);
 
@@ -52,11 +52,7 @@ export function SidebarProvider({ children }) {
       setTimeout(() => {
         setShowBackdrop(false);
 
-        document.body.classList.remove(
-          "absolute",
-          "w-full",
-          "overflow-hidden"
-        )
+        document.body.classList.remove("absolute", "w-full", "overflow-hidden");
       }, 300);
 
       setTimeout(() => {
@@ -65,30 +61,24 @@ export function SidebarProvider({ children }) {
     }
   }, [windowSize, showSidebar, isTransitioning]);
 
-  const handleClickOutside = useCallback((event) => {
-    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-      closeSidebar();
-    }
-  }, [closeSidebar]);
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        closeSidebar();
+      }
+    },
+    [closeSidebar]
+  );
 
   useEffect(() => {
     if (windowSize <= 1024 && showSidebar) {
-      document.addEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      )
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [windowSize, showSidebar, handleClickOutside]);
 
@@ -102,31 +92,36 @@ export function SidebarProvider({ children }) {
 
   useEffect(() => {
     if (windowSize >= 1024 && showSidebar) {
-      document.body.classList.remove(
-        "absolute",
-        "w-full",
-        "overflow-hidden"
-      )
+      document.body.classList.remove("absolute", "w-full", "overflow-hidden");
     }
   }, [showSidebar, windowSize]);
 
-  const value = useMemo(() => ({
-    sidebarRef, showSidebar, setShowSidebar,
-    showBackdrop, setShowBackdrop,
-    openSidebar, closeSidebar,
-  }), [
-    sidebarRef, showSidebar, setShowSidebar,
-    showBackdrop, setShowBackdrop,
-    openSidebar, closeSidebar,
-  ]);
+  const value = useMemo(
+    () => ({
+      sidebarRef,
+      showSidebar,
+      setShowSidebar,
+      showBackdrop,
+      setShowBackdrop,
+      openSidebar,
+      closeSidebar,
+    }),
+    [
+      sidebarRef,
+      showSidebar,
+      setShowSidebar,
+      showBackdrop,
+      setShowBackdrop,
+      openSidebar,
+      closeSidebar,
+    ]
+  );
 
   return (
-    <SidebarContext.Provider value={value}>
-      {children}
-    </SidebarContext.Provider>
+    <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>
   );
 }
 
 SidebarProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

@@ -1,16 +1,10 @@
-import Typography from "@components/ui/typography";
-
 import Section from "@components/layouts/section";
 import Container from "@components/layouts/container";
-import Box from "@components/layouts/box";
-import {
-  Grid, GridItem
-} from "@components/layouts/grid";
+import { Grid, GridItem } from "@components/layouts/grid";
 
 import ProductCard from "@components/cards/product-card";
 
 export default function ProductsSection({ productsData }) {
-  console.log(productsData.data)
   return (
     <Section>
       <Container>
@@ -23,7 +17,10 @@ export default function ProductsSection({ productsData }) {
                 name={product?.attributes?.productName}
                 slug={product?.attributes?.productSlug}
                 description={product?.attributes?.productDescription}
-                category={product?.attributes?.categories?.data?.[0]?.attributes?.categoryName}
+                category={
+                  product?.attributes?.categories?.data?.[0]?.attributes
+                    ?.categoryName
+                }
                 vendor={product?.attributes?.vendor?.data}
                 price={product?.attributes?.productPrice}
               />

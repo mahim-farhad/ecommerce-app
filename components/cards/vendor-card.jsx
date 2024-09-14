@@ -12,21 +12,12 @@ import Link from "@components/ui/link";
 import Typography from "@components/ui/typography";
 import Image from "@components/ui/image";
 import Button from "@components/ui/button";
-import {
-  Card, CardHeader, CardTitle, CardContent
-} from "@components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@components/ui/card";
 
 import Box from "@components/layouts/box";
+import { formatNumber } from "@utils/functions";
 
-export default function VendorCard({
-  id,
-  image,
-  name,
-  slug,
-  yop,
-  nop,
-  likes
-}) {
+export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
   // const { addToWishlist, items } = useWishlist();
 
   // const isItemExist = items.find((item) => item.id === business?.id);
@@ -38,109 +29,89 @@ export default function VendorCard({
         "flex flex-col",
         "min-w-0",
         "overflow-hidden",
-        "group",
+        "group"
       )}
     >
-      <CardHeader
-        className={clsx(
-          "relative",
-          "flex flex-col flex-grow",
-        )}
-      >
+      <CardHeader className={clsx("relative", "flex flex-col flex-grow")}>
         <Box
           className={clsx(
             "z-10 absolute",
-            "top-2 sm:top-4 left-2 sm:left-4",
+            "top-4 sm:top-4 left-4 sm:left-4",
             "flex gap-2 items-center",
-            "pt-1 pb-0.5 px-2",
-            "font-serif text-sm font-semibold",
-            "text-gray-400 bg-white dark:bg-white/5"
+            "py-1.5  px-3",
+            "font-serif text-sm leading-none font-bold",
+            "text-muted-foreground",
+            "bg-white dark:bg-black"
           )}
         >
           <span>Upto</span>
-          <span
-            className="text-primary"
-          >
-            50% Discounts
-          </span>
+          <span className="text-primary">50% Discounts</span>
         </Box>
 
         <Link
           href={`/store/${slug}`}
           className={clsx(
             "flex items-center justify-center",
-            "h-48",
-            "bg-gray-50",
+            !image && "h-52",
+            "overflow-hidden",
+            "bg-gray-100 dark:bg-white/5"
           )}
         >
-          {/* <img
+          {image ? (
+            <Image
               src={image}
-              alt={`${slug} logo`}
-              className="object-center"
-            /> */}
-
-          <CustomIcon
-            name="brand"
-            className="w-16 h-16 opacity-50"
-          />
+              alt={slug}
+              priority
+              className={clsx(
+                "object-center",
+                "group-hover:scale-110",
+                "transition-all duration-500 ease-in-out"
+              )}
+            />
+          ) : (
+            <CustomIcon
+              name="brand"
+              className="w-16 h-16 text-muted-foreground"
+            />
+          )}
         </Link>
       </CardHeader>
 
-      <CardContent
-        className={clsx(
-          "relative",
-          "py-3",
-          "px-2 sm:px-4",
-        )}
-      >
-        <Box
-          className={clsx(
-            "z-10 absolute -top-4",
-            "right-2 sm:right-4",
-          )}
-        >
+      <CardContent className={clsx("relative", "py-3", "px-2 sm:px-4")}>
+        <Box className={clsx("z-10 absolute -top-4", "right-4 sm:right-4")}>
           <Button
             size="sm"
             color="white"
             iconOnly
             rounded
-          // onClick={() => addToWishlist({ id, title, price })}
+            // onClick={() => addToWishlist({ id, title, price })}
           >
             <Icon
               name="Heart"
-              className={clsx(
+              className={
+                clsx()
                 // Boolean(isItemExist) &&
-                "text-primary fill-primary"
-              )}
+                // "text-primary fill-primary"
+              }
             />
           </Button>
         </Box>
 
         <Box
-          className={clsx(
-            "flex",
-            "gap-4",
-            "items-center",
-            "justify-between",
-          )}
+          className={clsx("flex", "gap-4", "items-center", "justify-between")}
         >
           <Box
             className={clsx(
               "flex items-center justify-center",
               "w-10 h-10",
-              "bg-gray-100",
+              "bg-gray-100 dark:bg-white/5",
               "rounded-full"
             )}
           >
             <CustomIcon name="brand" />
           </Box>
 
-          <Box
-            className={clsx(
-              "flex-1",
-              "-pt-[3px] -mb-[3px]"
-            )}
-          >
+          <Box className={clsx("flex-1", "-pt-[3px] -mb-[3px]")}>
             <CardTitle>
               <Link
                 href={`/store/${slug}`}
@@ -148,7 +119,7 @@ export default function VendorCard({
                   "mb-1.5",
                   "text-sm leading-none font-semibold",
                   "uppercase",
-                  "text-primary",
+                  "text-primary"
                 )}
               >
                 {name}
@@ -159,12 +130,11 @@ export default function VendorCard({
               className={clsx(
                 "flex gap-2 items-center",
                 "font-serif text-sm leading-none font-semibold",
-                "text-gray-400 bg-white dark:bg-white/5"
+                "text-muted-foreground"
               )}
             >
-              <span>{nop} Items</span>
-              {" "}{"|"}{" "}
-              <span>{likes} Likes</span>
+              <span>{formatNumber(nop)} Items</span> {"|"}{" "}
+              <span>{formatNumber(likes)} Likes</span>
             </Box>
           </Box>
         </Box>
@@ -180,5 +150,5 @@ VendorCard.propTypes = {
   image: PropTypes.string,
   yop: PropTypes.number,
   nop: PropTypes.number,
-  likes: PropTypes.number
+  likes: PropTypes.number,
 };

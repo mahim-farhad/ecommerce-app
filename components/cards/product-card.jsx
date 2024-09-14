@@ -14,6 +14,7 @@ import Image from "@components/ui/image";
 import Button from "@components/ui/button";
 
 import Box from "@components/layouts/box";
+import CustomIcon from "@components/ui/custom-icon";
 
 export default function ProductCard({
   id,
@@ -23,12 +24,12 @@ export default function ProductCard({
   description,
   category,
   vendor,
-  price
+  price,
 }) {
   const { addToCart } = useCart();
   const { addToWishlist, items } = useWishlist();
 
-  const isItemExist = items.find((item) => item.id === id)
+  const isItemExist = items.find((item) => item.id === id);
 
   return (
     <Box
@@ -37,15 +38,10 @@ export default function ProductCard({
         "flex flex-col",
         "min-w-0",
         "overflow-hidden",
-        "group",
+        "group"
       )}
     >
-      <Box
-        className={clsx(
-          "relative",
-          "overflow-hidden",
-        )}
-      >
+      <Box className={clsx("relative", "overflow-hidden")}>
         <Box
           className={clsx(
             "z-10 absolute",
@@ -53,7 +49,7 @@ export default function ProductCard({
             "flex gap-2 items-center",
             "py-1.5  px-3",
             "font-serif text-sm leading-none font-bold",
-            "text-primary dark:text-white",
+            "text-muted-foreground",
             "bg-white dark:bg-black"
           )}
         >
@@ -62,9 +58,8 @@ export default function ProductCard({
             name="Star"
             size="xs"
             className="text-primary dark:text-white"
-          />
-          {" "}{"|"}{" "}
-          <span>99</span>
+          />{" "}
+          {"|"} <span>99</span>
           <Icon
             name="MessageSquareDiff"
             size="xs"
@@ -75,18 +70,29 @@ export default function ProductCard({
         <Link
           href={`/shop/${slug}`}
           className={clsx(
+            "flex items-center justify-center",
+            !image && "h-60",
             "overflow-hidden",
             "bg-gray-50 dark:bg-white/5"
           )}
         >
-          <Image
-            src={image}
-            alt={slug}
-            className={clsx(
-              "group-hover:scale-110",
-              "transition-all duration-500 ease-in-out"
-            )}
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={slug}
+              priority
+              className={clsx(
+                "object-center",
+                "group-hover:scale-110",
+                "transition-all duration-500 ease-in-out"
+              )}
+            />
+          ) : (
+            <CustomIcon
+              name="brand"
+              className="w-16 h-16 text-muted-foreground"
+            />
+          )}
         </Link>
 
         <Box
@@ -107,7 +113,7 @@ export default function ProductCard({
               name="Heart"
               className={clsx(
                 Boolean(isItemExist) &&
-                "text-primary fill-primary"
+                  "text-primary dark:text-black fill-primary dark:fill-black"
               )}
             />
           </Button>
@@ -121,12 +127,10 @@ export default function ProductCard({
             <Icon name="ShoppingBag" />
           </Button>
 
-          <Button
-            size="sm"
-            color="white"
-            iconOnly
-          >
-            <Icon name="Eye" />
+          <Button size="sm" color="white" iconOnly>
+            <Link href={`shop/${slug}`}>
+              <Icon name="Eye" />
+            </Link>
           </Button>
         </Box>
 
@@ -134,7 +138,7 @@ export default function ProductCard({
           className={clsx(
             "z-10 absolute bottom-2 sm:bottom-4",
             "right-2 sm:right-4",
-            "sm:hidden",
+            "sm:hidden"
           )}
         >
           <Button
@@ -149,18 +153,13 @@ export default function ProductCard({
         </Box>
       </Box>
 
-      <Box
-        className={clsx(
-          "py-3",
-          "px-2 sm:px-4",
-        )}
-      >
+      <Box className={clsx("py-3", "px-2 sm:px-4")}>
         <Link
           href={`/stores/${vendor?.attributes.vendorSlug || slug}`}
           className={clsx(
             "text-sm leading-5 font-semibold",
             "uppercase",
-            "text-primary",
+            "text-primary"
           )}
         >
           {vendor?.attributes.vendorName || name}
@@ -173,32 +172,28 @@ export default function ProductCard({
             "my-1 sm:my-2",
             "text-xs sm:text-sm font-normal",
             "line-clamp-3",
-            "text-foreground/75",
+            "text-foreground/75"
           )}
         >
           {description}
         </Link>
 
-        <Box
-          className={clsx(
-            "flex gap-x-2 items-center",
-          )}
-        >
+        <Box className={clsx("flex gap-x-2 items-center")}>
           <Typography
             className={clsx(
               "font-serif",
               "text-base font-semibold uppercase",
-              "text-foreground",
+              "text-foreground"
             )}
           >
-            TK.{price - (price * 45 / 100).toFixed(2)}
+            TK.{price - ((price * 45) / 100).toFixed(2)}
           </Typography>
 
           <Typography
             className={clsx(
               "font-serif text-base font-semibold",
               "uppercase line-through",
-              "text-foreground/50",
+              "text-foreground/50"
             )}
           >
             {price.toFixed(2)}
@@ -215,5 +210,5 @@ ProductCard.propTypes = {
   name: PropTypes.string,
   slug: PropTypes.string,
   category: PropTypes.string,
-  price: PropTypes.number
+  price: PropTypes.number,
 };

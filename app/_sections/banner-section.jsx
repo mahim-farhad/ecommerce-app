@@ -37,7 +37,7 @@ export default function BannerSection() {
   };
 
   return (
-    <Section className="xl:py-8">
+    <Section className="!pt-4 sm:pt-8 md:pt-12 lg:py-16 xl:py-20">
       <Container>
         <Grid
           className={clsx(
