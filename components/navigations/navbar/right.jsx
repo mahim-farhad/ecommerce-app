@@ -12,8 +12,9 @@ import Link from "@components/ui/link";
 import Button from "@components/ui/button";
 import { List, ListItem } from "@components/ui/list";
 import ThemeToggle from "@components/ui/theme-toggle";
+import Image from "@components/ui/image";
 
-export default function Right() {
+export default function Right({ userData }) {
   const { totalCartItems } = useCart();
   const { totalWishlistItems } = useWishlist();
 
@@ -38,9 +39,19 @@ export default function Right() {
           iconOnly
           asChild
         >
-          <Link href="/profile">
-            <Icon name="User" />
-          </Link>
+          {userData.profileImage ? (
+            <Link href="/profile">
+              <Image
+                src={userData.profileImage}
+                alt={userData.username}
+                className="w-8 h-8 rounded-full"
+              />
+            </Link>
+          ) : (
+            <Link href="/profile">
+              <Icon name="User" />
+            </Link>
+          )}
         </Button>
       </ListItem>
 

@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 
 import { useFormState } from "react-dom";
+
+import clsx from "clsx";
 
 import { toast } from "sonner";
 
@@ -14,6 +16,9 @@ import { registerZodSchema } from "@libs/zodValidations";
 
 import { registerAction } from "@utils/actions/auth";
 
+import Typography from "@components/ui/typography";
+import Link from "@components/ui/link";
+import Icon from "@components/ui/icon";
 import Button from "@components/ui/button";
 
 import {
@@ -59,8 +64,9 @@ function RegisterForm() {
     INITIAL_STATE
   );
 
-  const [isPending, setPending] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const [isPending, startTransition] = useTransition();
+
+  const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     if (formState?.errors) {
@@ -73,25 +79,27 @@ function RegisterForm() {
     }
 
     if (formState?.message) {
-      setSuccessMessage(formState.message);
+      setToastMessage(formState.message);
     }
   }, [formState, setError]);
 
   useEffect(() => {
-    if (successMessage) {
-      toast.success(successMessage, {
+    if (toastMessage) {
+      toast.success(toastMessage, {
         position: 'top-center',
       });
 
-      setSuccessMessage("");
+      setToastMessage("");
     }
-  }, [successMessage]);
+  }, [toastMessage]);
 
   const onSubmit = async (data) => {
     const formData =
       convertToFormData(data);
 
-    formAction(formData);
+    startTransition(() => {
+      formAction(formData);
+    });
   };
 
   return (
@@ -157,10 +165,11 @@ function RegisterForm() {
           )}
         />
 
-        <Box className="flex items-center gap-4 py-4">
+        <Box className="flex items-center gap-4 pt-3">
           <Button
             type="button"
-            variant="toned"
+            size="lg"
+            variant="outlined"
             onClick={() => reset({ defaultValues })}
             className="w-full"
           >
@@ -169,12 +178,36 @@ function RegisterForm() {
 
           <Button
             type="submit"
-            disabled={isPending}
+            size="lg"
             className="w-full"
+            disabled={isPending}
           >
-            {isPending ? "Submitting..." : "Submit"}
+            {isPending ? (
+              <Icon name="LoaderCircle" />
+            ) : (
+              "Register"
+            )}
           </Button>
         </Box>
+
+        <Typography>
+          Already Have an Account?
+          <Link
+            href="/auth/login"
+            className={clsx(
+              "relative inline-block py-2 ml-1",
+              "font-medium text-primary",
+              "after:content-['']",
+              "after:absolute after:left-0 after:bottom-1",
+              "after:w-0 after:h-[1px]",
+              "after:bg-primary",
+              "hover:after:w-full",
+              "after:transition-all after:duration-200"
+            )}
+          >
+            Login
+          </Link>
+        </Typography>
       </form>
     </FormProvider>
   );

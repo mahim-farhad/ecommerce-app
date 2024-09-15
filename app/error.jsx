@@ -18,16 +18,16 @@ export default function Error({ error, reset }) {
           <Box
             className={clsx(
               "flex flex-col items-start md:items-center justify-center",
-              "h-96"
+              "min-h-96"
             )}
           >
             <Typography type="h2">Error!</Typography>
 
             <Typography
               className={clsx(
-                "sm:w-3/4 md:w-2/4",
-                "pr-4 sm:pr-0 my-4 sm:my-8",
-                "md:text-center",
+                "lg:w-2/4",
+                "pr-12 sm:pr-0 my-4 sm:my-8",
+                "md:text-center text-wrap",
                 "text-muted-foreground"
               )}
             >

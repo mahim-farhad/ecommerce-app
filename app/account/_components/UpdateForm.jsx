@@ -6,6 +6,7 @@ import { useFormState } from "react-dom";
 
 import { toast } from "sonner";
 
+
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm, FormProvider } from "react-hook-form";
@@ -13,6 +14,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { updateUserZodSchema } from "@libs/zodValidations";
 
 import { updateUserAction } from "@utils/actions/users";
+import { logoutAction } from "@utils/actions/auth";
 
 import Button from "@components/ui/button";
 
@@ -26,6 +28,9 @@ import {
 } from "@components/forms/form";
 
 import Box from "@components/layouts/box";
+import clsx from "clsx";
+import Icon from "@components/ui/icon";
+import { GridItem } from "@components/layouts/grid";
 
 const defaultValues = {
   username: "",
@@ -53,16 +58,19 @@ export default function UpdateForm({ userData }) {
     defaultValues: {
       username: userData.username || "",
       email: userData.email || "",
+      phone: userData.phone || "",
+      profileImage: userData.profileImage || "",
+      currentPassword: userData.password || "",
     },
   });
 
-  const { handleSubmit, setError, reset } = form;
+  const { trigger, handleSubmit, setError, } = form;
 
   const [formState, formAction] = useFormState(updateUserAction, INITIAL_STATE);
 
   const [isPending, startTransition] = useTransition();
 
-  const [successMessage, setSuccessMessage] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     if (formState?.errors) {
@@ -75,84 +83,195 @@ export default function UpdateForm({ userData }) {
     }
 
     if (formState?.message) {
-      setSuccessMessage(formState.message);
+      setToastMessage(formState.message);
     }
   }, [formState, setError]);
 
   useEffect(() => {
-    if (successMessage) {
-      toast.success(successMessage, {
+    if (toastMessage) {
+      toast.success(toastMessage, {
         position: "top-center",
       });
 
-      setSuccessMessage("");
+      setToastMessage("");
     }
-  }, [successMessage]);
+  }, [toastMessage]);
 
   const onSubmit = async (data) => {
     const formData = convertToFormData(data);
 
-    // startTransition(() => {
-    formAction(formData);
-    // });
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
+
+  const handleLogout = async (event) => {
+    event.preventDefault();
+
+    await logoutAction();
   };
 
   return (
     <FormProvider {...form}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={clsx(
+          "grid sm:grid-cols-2 lg:grid-cols-3",
+          "gap-4",
+        )}
+      >
+        <GridItem className="col-span-1">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username</FormLabel>
+
+                <FormControl
+                  type="text"
+                  placeholder="Username" {...field}
+                  onBlur={() => trigger("username")}
+                />
+
+                <FormIcon name="User" />
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </GridItem>
+
+        <GridItem className="col-span-1">
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+
+                <FormControl
+                  type="email"
+                  placeholder="Email" {...field}
+                  onBlur={() => trigger("email")}
+                />
+
+                <FormIcon name="Mail" />
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </GridItem>
+
+        <GridItem className="col-span-1">
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone</FormLabel>
+
+                <FormControl
+                  type="tel"
+                  placeholder="+8801X XX XXX XXX" {...field}
+                  onBlur={() => trigger("phone")}
+                />
+
+                <FormIcon name="Phone" />
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </GridItem>
+
+        <GridItem className="col-span-1">
+          <FormField
+            control={form.control}
+            name="profileImage"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Profile URL</FormLabel>
+
+                <FormControl
+                  type="url"
+                  placeholder="Profile Image URL" {...field}
+                  onBlur={() => trigger("profileImage")}
+                />
+
+                <FormIcon name="Link" />
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </GridItem>
+
         <FormField
           control={form.control}
-          name="username"
+          name="currentPassword"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Current Password</FormLabel>
 
-              <FormControl type="text" placeholder="Username" {...field} />
-
-              <FormIcon name="User" />
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-
-              <FormControl type="email" placeholder="Email" {...field} />
-
-              <FormIcon name="Mail" />
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        {/* <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-
-              <FormControl type="password" placeholder="Password" {...field} />
+              <FormControl
+                type="password"
+                placeholder="Current Password" {...field}
+                onBlur={() => trigger("currentPassword")}
+              />
 
               <FormIcon name="Lock" />
 
               <FormMessage />
             </FormItem>
           )}
-        /> */}
+        />
 
-        <Box className="flex items-center justify-end gap-4 py-4">
-          <Button type="submit" disabled={isPending}>
-            {isPending ? "Updating..." : "Update"}
-          </Button>
-        </Box>
+        <FormField
+          control={form.control}
+          name="newPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>New Password</FormLabel>
+
+              <FormControl
+                type="password"
+                placeholder="New Password"
+                {...field}
+                onBlur={() => trigger("newPassword")}
+              />
+
+              <FormIcon name="Lock" />
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <GridItem className="col-span-full">
+          <Box className="flex items-center justify-end gap-4 pt-3">
+            <Button
+              variant="outlined"
+              size="lg"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+
+            <Button
+              type="submit"
+              size="lg"
+              disabled={isPending}
+            >
+              {isPending ? (
+                <Icon name="LoaderCircle" />
+              ) : (
+                "Update"
+              )}
+            </Button>
+          </Box>
+        </GridItem>
       </form>
     </FormProvider>
   );

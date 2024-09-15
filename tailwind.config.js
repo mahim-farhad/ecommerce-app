@@ -61,6 +61,7 @@ module.exports = {
 				'5': 'hsl(var(--chart-5))'
 			},
 			google: "#3c7ff1",
+			github: "#2B3137",
 			facebook: "#0165e1",
 			whatsapp: "#25D366",
 			twitter: "#000000",

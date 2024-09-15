@@ -80,7 +80,6 @@ export default function ProductCard({
             <Image
               src={image}
               alt={slug}
-              priority
               className={clsx(
                 "object-center",
                 "group-hover:scale-110",
@@ -113,7 +112,7 @@ export default function ProductCard({
               name="Heart"
               className={clsx(
                 Boolean(isItemExist) &&
-                  "text-primary dark:text-black fill-primary dark:fill-black"
+                "text-primary dark:text-black fill-primary dark:fill-black"
               )}
             />
           </Button>

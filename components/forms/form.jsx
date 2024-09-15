@@ -148,7 +148,7 @@ const FormIcon = forwardRef(function FormIcon({ name }, ref) {
         "w-12 h-12",
         "font-sans text-sm font-medium",
         error
-          ? "text-error dark:text-error"
+          ? "text-destructive"
           : "text-gray-400 dark:text-gray-400",
         "transition-all duration-150 ease-in-out"
       )}
@@ -192,13 +192,14 @@ const FormMessage = forwardRef(function FormMessage({ ...props }, ref) {
     <Box className={clsx("z-10 absolute bottom-0 w-full")}>
       <Typography
         ref={ref}
+        type="p"
         id={formMessageId}
         className={clsx(
           "py-1 px-4",
-          "text-xs font-semibold uppercase",
+          "!text-xs font-medium uppercase truncate",
           error
-            ? "text-error dark:text-error truncate"
-            : "text-gray-400 dark:text-gray-300",
+            ? "text-destructive"
+            : "text-primary",
         )}
         {...props}
       >

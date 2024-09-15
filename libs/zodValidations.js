@@ -58,6 +58,8 @@ export const updateUserZodSchema = z.object({
     .string()
     .min(2, {
       message: "Name must be at least 2 characters long.",
+    }).max(50, {
+      message: "Username must be less than 50 characters"
     })
     .trim(),
   email: z
@@ -66,6 +68,22 @@ export const updateUserZodSchema = z.object({
       message: "Please enter a valid email.",
     })
     .trim(),
+  phone: z
+    .union([z.string().regex(/^\+8801[0-9]{9}$/, {
+      message: "Phone number must be in the format +8801X XX XXX XXX"
+    }), z.literal('')])
+    .optional(),
+  profileImage: z
+    .string()
+    .url({ message: "Invalid URL" }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .optional(),
+  newPassword: z
+    .string()
+    .min(6, { message: "New password must be at least 6 characters" })
+    .optional(),
 });
 
 export const ProductZodSchema = z.object({

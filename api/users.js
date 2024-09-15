@@ -12,9 +12,7 @@ export async function createUser(userData) {
 
 export async function updateUser(userId, userData) {
   try {
-    const res = await axiosSecure.put(`/users/${userId}`, {
-      data: { ...userData },
-    });
+    const res = await axiosSecure.put(`/users/${userId}`, { ...userData });
 
     return res.data;
   } catch (error) {

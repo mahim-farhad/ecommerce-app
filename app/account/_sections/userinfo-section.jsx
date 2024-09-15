@@ -15,7 +15,7 @@ export default async function UserInfoSection() {
     <Section>
       <Container>
         <Box className="mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <Typography className="text-gray-400">Secure Conn</Typography>
+          <Typography className="text-gray-400">Privacy Ensured</Typography>
 
           <Typography type="h2">Update Informations</Typography>
         </Box>

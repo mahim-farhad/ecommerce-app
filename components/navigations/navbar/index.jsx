@@ -11,7 +11,7 @@ import Left from "@components/navigations/navbar/left";
 import Center from "@components/navigations/navbar/center";
 import Right from "@components/navigations/navbar/right";
 
-export default function Navbar() {
+export default function Navbar({ currentUserData }) {
   const router = usePathname();
 
   const noNavRoutes = ["/auth/login", "/auth/register"];
@@ -50,7 +50,7 @@ export default function Navbar() {
           </Box>
 
           <Box className="flex-shrink-0">
-            <Right />
+            <Right userData={currentUserData} />
           </Box>
         </Box>
       </Container>

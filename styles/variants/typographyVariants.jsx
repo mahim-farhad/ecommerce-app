@@ -38,14 +38,14 @@ export default function getTypographyVariants(type) {
     ],
     p: [
       "font-sans",
-      "text-base leading-[1.75]",
+      "text-sm sm:text-base leading-[1.5]",
       "font-medium tracking-normal",
-      "text-foreground"
+      "text-muted-foreground",
     ],
     small: [
       "font-sans",
-      "text-xs leading-[1.75]",
-      "font-semibold uppercase tracking-normal",
+      "text-sm leading-[1.5]",
+      "font-medium uppercase tracking-normal",
       "text-foreground"
     ],
     blockquote: [

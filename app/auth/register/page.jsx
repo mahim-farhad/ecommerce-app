@@ -28,7 +28,7 @@ export default function Register() {
               "my-8 mx-auto",
               "bg-white",
               "border",
-              "rounded-xl"
+              "rounded-none"
             )}
           >
             <SAFormWithRHF />

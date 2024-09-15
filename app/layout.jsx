@@ -15,6 +15,8 @@ import Toaster from "@components/ui/toaster";
 import Navbar from "@components/navigations/navbar";
 // import Sidebar from "@components/navigations/sidebar";
 import Footer from "@components/navigations/footer";
+import { UserProvider } from "@hooks/useUserContext";
+import { getCurrentUser } from "@api/users";
 
 export const metadata = {
   title: "Create Next App",
@@ -25,7 +27,7 @@ export const viewport = {
   themeColor: "rgb(0 0 0)",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   const bodyClasses = clsx(
     poppins.variable,
     robotoCondensed.variable,
@@ -36,6 +38,8 @@ export default function RootLayout({ children }) {
     "text-foreground bg-background"
   );
 
+  const currentUserData = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={bodyClasses}>
@@ -44,21 +48,23 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem={true}
         >
-          <CartProvider>
-            <WishtlistProvider>
-              <TooltipProvider>
-                <SidebarProvider>
-                  <Navbar />
+          <UserProvider>
+            <CartProvider>
+              <WishtlistProvider>
+                <TooltipProvider>
+                  <SidebarProvider>
+                    <Navbar currentUserData={currentUserData} />
 
-                  {/* <Sidebar /> */}
+                    {/* <Sidebar /> */}
 
-                  {children}
+                    {children}
 
-                  <Footer />
-                </SidebarProvider>
-              </TooltipProvider>
-            </WishtlistProvider>
-          </CartProvider>
+                    <Footer />
+                  </SidebarProvider>
+                </TooltipProvider>
+              </WishtlistProvider>
+            </CartProvider>
+          </UserProvider>
 
           <Toaster />
         </ThemeProvider>

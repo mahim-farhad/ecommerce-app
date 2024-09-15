@@ -52,7 +52,7 @@ export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
           href={`/store/${slug}`}
           className={clsx(
             "flex items-center justify-center",
-            !image && "h-52",
+            "h-52",
             "overflow-hidden",
             "bg-gray-100 dark:bg-white/5"
           )}
@@ -61,7 +61,6 @@ export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
             <Image
               src={image}
               alt={slug}
-              priority
               className={clsx(
                 "object-center",
                 "group-hover:scale-110",
@@ -84,7 +83,7 @@ export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
             color="white"
             iconOnly
             rounded
-            // onClick={() => addToWishlist({ id, title, price })}
+          // onClick={() => addToWishlist({ id, title, price })}
           >
             <Icon
               name="Heart"

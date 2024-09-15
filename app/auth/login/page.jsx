@@ -1,6 +1,7 @@
 "use client";
 
 import Icon from "@components/ui/icon";
+import CustomIcon from "@components/ui/custom-icon";
 import Link from "@components/ui/link";
 import Separator from "@components/ui/separator";
 import Button from "@components/ui/button";
@@ -14,12 +15,7 @@ import LoginRHF from "../_components/LoginForm";
 
 export default function Login() {
   return (
-    <Main
-      className={[
-        "flex flex-col items-center justify-center",
-        "min-h-screen",
-      ]}
-    >
+    <Main>
       <Section>
         <Container>
           <Box
@@ -31,19 +27,18 @@ export default function Login() {
               "mx-auto mb-8",
               "bg-background",
               "border",
-              "shadow-none",
             ]}
           >
-            <Box className={["space-y-4"]}>
-              <Button className="w-full">
-                <Icon name="Google" />
+            <Box className={["space-y-4", "mb-4"]}>
+              <Button className="w-full bg-google" size="lg">
+                <CustomIcon name="google" />
                 Login with Google
               </Button>
 
-              <Button className="w-full" asChild>
+              <Button className="w-full bg-github" size="lg" asChild>
                 <Link href="#">
-                  <Icon name="Facebook" />
-                  Login with Facebook
+                  <Icon name="Github" />
+                  Login with Github
                 </Link>
               </Button>
             </Box>

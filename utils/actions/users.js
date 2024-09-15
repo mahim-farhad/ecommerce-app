@@ -37,6 +37,10 @@ export async function updateUserAction(prevState, formData) {
     const fieldErrors = {
       username: "",
       email: "",
+      phone: "",
+      profileImage: "",
+      currentPassword: "",
+      newPassword: "",
     };
 
     if (error.response) {
@@ -51,6 +55,14 @@ export async function updateUserAction(prevState, formData) {
           fieldErrors.username = errorMessage;
 
           fieldErrors.email = errorMessage;
+        } else if (errorMessage.includes("Username")) {
+          fieldErrors.username = errorMessage;
+        } else if (errorMessage.includes("Phone")) {
+          fieldErrors.phone = errorMessage;
+        } else if (errorMessage.includes("Profile Image")) {
+          fieldErrors.profileImage = errorMessage;
+        } else if (errorMessage.includes("Password")) {
+          fieldErrors.currentPassword = errorMessage;
         }
       } else {
         errorMessage = data;
@@ -66,5 +78,5 @@ export async function updateUserAction(prevState, formData) {
     };
   }
 
-  revalidatePath("/account?success=user-info-updated-successfully!");
+  // revalidatePath("/account?success=user-info-updated-successfully!");
 }
