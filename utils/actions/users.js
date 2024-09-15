@@ -78,5 +78,5 @@ export async function updateUserAction(prevState, formData) {
     };
   }
 
-  // revalidatePath("/account?success=user-info-updated-successfully!");
+  revalidatePath("/account?success=user-info-updated-successfully!");
 }

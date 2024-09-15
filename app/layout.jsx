@@ -4,6 +4,8 @@ import clsx from "clsx";
 
 import "@styles/globals.css";
 
+import { getCurrentUser } from "@api/users";
+
 import { ThemeProvider, TooltipProvider } from "@libs/providers";
 
 import { CartProvider } from "@contexts/CartContext";
@@ -15,8 +17,6 @@ import Toaster from "@components/ui/toaster";
 import Navbar from "@components/navigations/navbar";
 // import Sidebar from "@components/navigations/sidebar";
 import Footer from "@components/navigations/footer";
-import { UserProvider } from "@hooks/useUserContext";
-import { getCurrentUser } from "@api/users";
 
 export const metadata = {
   title: "Create Next App",
@@ -48,23 +48,21 @@ export default async function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem={true}
         >
-          <UserProvider>
-            <CartProvider>
-              <WishtlistProvider>
-                <TooltipProvider>
-                  <SidebarProvider>
-                    <Navbar currentUserData={currentUserData} />
+          <CartProvider>
+            <WishtlistProvider>
+              <TooltipProvider>
+                <SidebarProvider>
+                  <Navbar currentUserData={currentUserData} />
 
-                    {/* <Sidebar /> */}
+                  {/* <Sidebar /> */}
 
-                    {children}
+                  {children}
 
-                    <Footer />
-                  </SidebarProvider>
-                </TooltipProvider>
-              </WishtlistProvider>
-            </CartProvider>
-          </UserProvider>
+                  <Footer />
+                </SidebarProvider>
+              </TooltipProvider>
+            </WishtlistProvider>
+          </CartProvider>
 
           <Toaster />
         </ThemeProvider>

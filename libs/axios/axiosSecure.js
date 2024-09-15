@@ -33,6 +33,8 @@ axiosSecure.interceptors.response.use(
     return response;
   },
   function (error) {
+    console.log(error);
+
     if (error.response) {
       return Promise.reject(new Error(`${error.response}.`));
     } else {
