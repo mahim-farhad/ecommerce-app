@@ -40,7 +40,7 @@ export const config = {
   matcher: [
     '/admin/:path*',
     '/auth/:path*',
-    '/profile',
+    '/account',
     '/((?!api|_next/static|_next/image|.*\\.png$).*)'
   ],
 };

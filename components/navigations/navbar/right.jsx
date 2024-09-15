@@ -9,10 +9,10 @@ import { useToggleSidebar } from "@contexts/SidebarContext";
 
 import Icon from "@components/ui/icon";
 import Link from "@components/ui/link";
+import Image from "@components/ui/image";
 import Button from "@components/ui/button";
 import { List, ListItem } from "@components/ui/list";
 import ThemeToggle from "@components/ui/theme-toggle";
-import Image from "@components/ui/image";
 
 export default function Right({ userData }) {
   const { totalCartItems } = useCart();
