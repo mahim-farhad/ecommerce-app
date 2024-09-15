@@ -61,7 +61,7 @@ export default function Right({ userData }) {
           asChild
         >
           <Link
-            href="/wishlists"
+            href="/account#wishlists"
             className={clsx(
               "relative",
               "overflow-visible"
@@ -95,7 +95,7 @@ export default function Right({ userData }) {
           asChild
         >
           <Link
-            href="/cart"
+            href="/account#cart"
             className={clsx(
               "relative",
               "overflow-visible"
