@@ -17,13 +17,14 @@ export default async function middleware(req) {
     }
   }
 
-  // if (currentPath.startsWith("/account")) {
-  //   if (user?.ok !== true) {
-  //     return NextResponse.redirect(new URL(
-  //       "/auth/login", req.nextUrl
-  //     ));
-  //   }
-  // }
+  if (currentPath.startsWith("/account")) {
+    console.log("User Status:", user?.ok);
+    if (user?.ok !== true) {
+      return NextResponse.redirect(new URL(
+        "/auth/login", req.nextUrl
+      ));
+    }
+  }
 
   if (currentPath.startsWith("/admin")) {
     if (!user || userRole !== "admin") {
