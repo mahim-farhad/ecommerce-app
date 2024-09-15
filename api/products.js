@@ -60,7 +60,7 @@ export async function getProducts() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 3600 },
+        next: { revalidate: 60 },
       }
     );
 
