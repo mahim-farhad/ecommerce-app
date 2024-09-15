@@ -17,13 +17,13 @@ export default async function middleware(req) {
     }
   }
 
-  if (currentPath.startsWith("/account")) {
-    if (user?.ok !== true) {
-      return NextResponse.redirect(new URL(
-        "/auth/login", req.nextUrl
-      ));
-    }
-  }
+  // if (currentPath.startsWith("/account")) {
+  //   if (user?.ok !== true) {
+  //     return NextResponse.redirect(new URL(
+  //       "/auth/login", req.nextUrl
+  //     ));
+  //   }
+  // }
 
   if (currentPath.startsWith("/admin")) {
     if (!user || userRole !== "admin") {
@@ -40,7 +40,7 @@ export const config = {
   matcher: [
     '/admin/:path*',
     '/auth/:path*',
-    '/account',
+    // '/account',
     '/((?!api|_next/static|_next/image|.*\\.png$).*)'
   ],
 };

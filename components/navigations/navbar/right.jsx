@@ -39,19 +39,17 @@ export default function Right({ userData }) {
           iconOnly
           asChild
         >
-          {userData.profileImage ? (
-            <Link href="/profile">
+          <Link href="/account">
+            {userData.profileImage ? (
               <Image
                 src={userData.profileImage}
                 alt={userData.username}
                 className="w-8 h-8 rounded-full"
               />
-            </Link>
-          ) : (
-            <Link href="/profile">
+            ) : (
               <Icon name="User" />
-            </Link>
-          )}
+            )}
+          </Link>
         </Button>
       </ListItem>
 
@@ -141,6 +139,6 @@ export default function Right({ userData }) {
           </span>
         </Button>
       </ListItem>
-    </List>
+    </List >
   );
 }
