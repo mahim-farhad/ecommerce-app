@@ -1,5 +1,7 @@
 // import axiosInstance from "@libs/axios/axiosInstance";
 
+import { delayExecute } from "@utils/functions";
+
 // import axiosSecure from "@libs/axios/axiosSecure";
 
 // const noCacheHeaders = { headers: { cache: "no-store" }, };
@@ -65,6 +67,8 @@ export async function getVendor(slug) {
 
 export async function getVendors() {
   try {
+    await delayExecute(2000);
+
     const response = await fetch(
       `${process.env.BACKEND_URL}/vendors?populate=*`,
       {

@@ -1,7 +1,5 @@
 import { Suspense } from "react";
 
-import { Skeleton } from "@components/ui/skeleton";
-
 import Main from "@components/layouts/main";
 
 import FilterProducts from "./_components/filter-products";
@@ -12,6 +10,11 @@ import HistorySection from "./_sections/history-section";
 import VendorsSection from "./_sections/vendors-section";
 import PopularProductsSection from "./_sections/popular-products-section";
 
+import ProductsSectionSkeleton
+  from "@components/custom/Skeleton/ProductsSectionSkeleton";
+import VendorsSectionSkeleton
+  from "@components/custom/Skeleton/VendorsSectionSkeleton";
+
 export default function Home() {
   return (
     <>
@@ -20,19 +23,17 @@ export default function Home() {
       <Main>
         <BannerSection />
 
-        <Suspense fallback={<Skeleton className="w-40 h-60 bg-gray-300" />}>
+        <Suspense fallback={<ProductsSectionSkeleton />}>
           <ProductsSection />
         </Suspense>
 
         <HistorySection />
 
-        <Suspense fallback={<Skeleton className="w-40 h-60 bg-gray-300" />}>
+        <Suspense fallback={<VendorsSectionSkeleton />}>
           <VendorsSection />
         </Suspense>
 
-        <Suspense fallback={<Skeleton className="w-40 h-60 bg-gray-300" />}>
-          <PopularProductsSection />
-        </Suspense>
+        <PopularProductsSection />
       </Main>
     </>
   );
