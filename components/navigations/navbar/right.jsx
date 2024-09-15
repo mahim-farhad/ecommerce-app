@@ -32,28 +32,35 @@ export default function Right({ userData }) {
         <ThemeToggle />
       </ListItem>
 
-      <ListItem>
+      <ListItem className="hidden md:block">
         <Button
           size="sm"
           variant="text"
-          iconOnly
+          iconOnly={userData?.username}
           asChild
         >
-          <Link href="/account">
-            {userData.profileImage ? (
-              <Image
-                src={userData.profileImage}
-                alt={userData.username}
-                className="w-8 h-8 rounded-full"
-              />
-            ) : (
-              <Icon name="User" />
-            )}
-          </Link>
+          {!userData?.username
+            ?
+            <Link href="/auth/login">
+              Login
+            </Link>
+            :
+            <Link href="/account">
+              {userData?.profileImage ? (
+                <Image
+                  src={userData?.profileImage}
+                  alt={userData?.username}
+                  className="w-8 h-8 rounded-full"
+                />
+              ) : (
+                <Icon name="User" />
+              )}
+            </Link>
+          }
         </Button>
       </ListItem>
 
-      <ListItem className="hidden md:block">
+      <ListItem>
         <Button
           size="sm"
           variant="text"

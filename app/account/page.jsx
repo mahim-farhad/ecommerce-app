@@ -1,15 +1,18 @@
 import Main from "@components/layouts/main";
 
-import UserInfoSection from "./_sections/userinfo-section";
 import WishlistSection from "./_sections/wishlist-section";
+import CartSection from "./_sections/card-section";
+import UserInfoSection from "./_sections/userinfo-section";
 
 export default function Account() {
   return (
     <>
       <Main>
-        <UserInfoSection />
-
         <WishlistSection />
+
+        <CartSection />
+
+        <UserInfoSection />
       </Main>
     </>
   );

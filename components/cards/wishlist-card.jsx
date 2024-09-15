@@ -8,15 +8,13 @@ import { Card, CardContent } from '@components/ui/card';
 
 import Box from '@components/layouts/box';
 
-export default function CartCard({
+export default function WishlistCard({
   id,
   image,
   name,
   price,
-  quantity,
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart
+  addToCart,
+  removeFromWishlist
 }) {
   return (
     <Card className="flex flex-row gap-4 sm:gap-8 items-center">
@@ -71,39 +69,21 @@ export default function CartCard({
         <Box className="flex items-center gap-2">
           <Button
             size="xs"
-            variant="text"
-            iconOnly
-            onClick={() => incrementQuantity({ id, image, name, price })}
+            onClick={() => {
+              addToCart({ id, image, name, price })
+              removeFromWishlist({ id, image, name, price })
+            }}
             rounded
           >
-            <Icon name="Plus" />
-          </Button>
-
-          <Box
-            className={clsx(
-              "flex items-center justify-center",
-              "h-8 w-8",
-              "border rounded-full"
-            )}
-          >
-            <Typography className="pt-0.5">{quantity}</Typography>
-          </Box>
-
-          <Button
-            size="xs"
-            variant="text"
-            iconOnly
-            onClick={() => decrementQuantity({ id, image, name, price })}
-            rounded
-          >
-            <Icon name="Minus" />
+            <Icon name="ShoppingBag" />
+            Add to Cart
           </Button>
 
           <Button
             size="xs"
             variant="text"
             iconOnly
-            onClick={() => removeFromCart({ id, image, name, price })}
+            onClick={() => removeFromWishlist({ id, image, name, price })}
             className="ml-auto text-gray-400"
           >
             <Icon name="Trash2" />

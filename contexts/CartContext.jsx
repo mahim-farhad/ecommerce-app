@@ -34,19 +34,13 @@ const cartReducer = (state, action) => {
           item.id === action.item.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
-        )
-        : [...state, { ...action.item, quantity: 1 }];
+        ) : [...state, { ...action.item, quantity: 1 }];
 
     case "INCREMENT_QUANTITY":
-      return (
-        state.find((item) => item.id === action.item.id)?.quantity === 1
-          ? state.filter((item) => item.id !== action.item.id)
-          : state.map((item) =>
-            item.id === action.item.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-      );
+      return (state.map((item) => item.id === action.item.id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+      ));
 
     case "DECREMENT_QUANTITY":
       return (
@@ -105,10 +99,10 @@ export function CartProvider({ children }) {
       item
     });
 
-    toast.success(`${item.title} added to cart!`);
+    toast.success(`${item.name} added to cart!`);
   }
 
-  function decrementItemQuantity(item) {
+  function incrementItemQuantity(item) {
     dispatch({
       type: "INCREMENT_QUANTITY",
       item
@@ -122,7 +116,7 @@ export function CartProvider({ children }) {
     });
   }
 
-  function removeFromCart(item) {
+  function removeItemFromCart(item) {
     dispatch({
       type: "REMOVE_FROM_CART",
       item
@@ -142,8 +136,9 @@ export function CartProvider({ children }) {
   const value = {
     items: cart,
     addToCart,
+    incrementItemQuantity,
     decrementItemQuantity,
-    removeFromCart,
+    removeItemFromCart,
     clearCart,
     totalCartItems:
       isClient

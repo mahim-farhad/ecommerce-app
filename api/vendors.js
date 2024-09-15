@@ -31,7 +31,7 @@ export async function getVendor(slug) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.BACKEND_API}`,
         },
-        next: { revalidate: 60 },
+        next: { revalidate: 3600 },
       }
     );
 

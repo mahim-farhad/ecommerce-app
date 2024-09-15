@@ -8,10 +8,14 @@ export const navigations = [{
   name: "Shop"
 }, {
   id: 3,
+  path: "/stores",
+  name: "Brands"
+}, {
+  id: 4,
   path: "/blogs",
   name: "Blogs"
 }, {
-  id: 4,
+  id: 5,
   path: "/contact",
   name: "Contact"
 }];

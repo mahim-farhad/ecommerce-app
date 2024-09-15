@@ -49,7 +49,7 @@ export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
         </Box>
 
         <Link
-          href={`/store/${slug}`}
+          href={`/stores/${slug}`}
           className={clsx(
             "flex items-center justify-center",
             "h-52",
@@ -113,7 +113,7 @@ export default function VendorCard({ id, image, name, slug, yop, nop, likes }) {
           <Box className={clsx("flex-1", "-pt-[3px] -mb-[3px]")}>
             <CardTitle>
               <Link
-                href={`/store/${slug}`}
+                href={`/stores/${slug}`}
                 className={clsx(
                   "mb-1.5",
                   "text-sm leading-none font-semibold",

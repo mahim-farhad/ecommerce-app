@@ -87,9 +87,9 @@ export function WishtlistProvider({ children }) {
     );
 
     if (isItemInWishlist) {
-      toast.error(`${item.title} removed from wishlist!`);
+      toast.error(`${item.name} removed from wishlist!`);
     } else {
-      toast.success(`${item.title} added to wishlist!`);
+      toast.success(`${item.name} added to wishlist!`);
     }
   }
 

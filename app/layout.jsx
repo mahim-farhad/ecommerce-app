@@ -15,7 +15,7 @@ import { SidebarProvider } from "@contexts/SidebarContext";
 import Toaster from "@components/ui/toaster";
 
 import Navbar from "@components/navigations/navbar";
-// import Sidebar from "@components/navigations/sidebar";
+import Sidebar from "@components/navigations/sidebar";
 import Footer from "@components/navigations/footer";
 
 export const metadata = {
@@ -54,7 +54,7 @@ export default async function RootLayout({ children }) {
                 <SidebarProvider>
                   <Navbar currentUserData={currentUserData} />
 
-                  {/* <Sidebar /> */}
+                  <Sidebar currentUserData={currentUserData} />
 
                   {children}
 

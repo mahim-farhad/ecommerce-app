@@ -106,7 +106,7 @@ export default function ProductCard({
             size="sm"
             color="white"
             iconOnly
-            onClick={() => addToWishlist({ id, name, price })}
+            onClick={() => addToWishlist({ id, image, name, price })}
           >
             <Icon
               name="Heart"
