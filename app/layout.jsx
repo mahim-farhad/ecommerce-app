@@ -1,12 +1,18 @@
-import { poppins, robotoCondensed, firaCode } from "@libs/fonts";
+import {
+  poppins, akiraExpanded, robotoCondensed, firaCode
+} from "@libs/fonts";
 
 import clsx from "clsx";
+
+import { getServerSession } from 'next-auth';
 
 import "@styles/globals.css";
 
 import { getCurrentUser } from "@api/users";
 
-import { ThemeProvider, TooltipProvider } from "@libs/providers";
+// import { authOptions } from '@api/auth/[...nextauth]/authOptions';
+
+import { ThemeProvider, SessionProvider, TooltipProvider } from "@libs/providers";
 
 import { CartProvider } from "@contexts/CartContext";
 import { WishtlistProvider } from "@contexts/WishlistContext";
@@ -28,8 +34,13 @@ export const viewport = {
 };
 
 export default async function RootLayout({ children }) {
+  // const session = await getServerSession(authOptions);
+
+  const currentUserData = await getCurrentUser();
+
   const bodyClasses = clsx(
     poppins.variable,
+    akiraExpanded.variable,
     robotoCondensed.variable,
     firaCode.variable,
     "antialiased",
@@ -37,8 +48,6 @@ export default async function RootLayout({ children }) {
     "select-none overflow-x-hidden",
     "text-foreground bg-background"
   );
-
-  const currentUserData = await getCurrentUser();
 
   return (
     <html lang="en">
@@ -48,21 +57,23 @@ export default async function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem={true}
         >
-          <CartProvider>
-            <WishtlistProvider>
-              <TooltipProvider>
-                <SidebarProvider>
-                  <Navbar currentUserData={currentUserData} />
+          <SessionProvider>
+            <CartProvider>
+              <WishtlistProvider>
+                <TooltipProvider>
+                  <SidebarProvider>
+                    <Navbar currentUserData={currentUserData} />
 
-                  <Sidebar currentUserData={currentUserData} />
+                    <Sidebar currentUserData={currentUserData} />
 
-                  {children}
+                    {children}
 
-                  <Footer />
-                </SidebarProvider>
-              </TooltipProvider>
-            </WishtlistProvider>
-          </CartProvider>
+                    <Footer />
+                  </SidebarProvider>
+                </TooltipProvider>
+              </WishtlistProvider>
+            </CartProvider>
+          </SessionProvider>
 
           <Toaster />
         </ThemeProvider>

@@ -5,13 +5,15 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import Container from "@components/layouts/container";
-import Box from "@components/layouts/box";
+import { Grid, GridItem } from "@components/layouts/grid";
 
 import Left from "@components/navigations/navbar/left";
 import Center from "@components/navigations/navbar/center";
 import Right from "@components/navigations/navbar/right";
 
-export default function Navbar({ currentUserData }) {
+import Topbar from "@components/navigations/topbar";
+
+export default function Navbar() {
   const router = usePathname();
 
   const noNavRoutes = ["/auth/login", "/auth/register"];
@@ -20,40 +22,43 @@ export default function Navbar({ currentUserData }) {
 
   if (hideNavbar) return null;
 
-  const navbarClasses = clsx(
-    "flex gap-4 items-center justify-between",
-    "h-16 xl:h-20 py-3 sm:py-4",
-    "text-foreground bg-background",
-    "transition-all duration-300 ease-in-out",
-  );
-
   return (
-    <nav className={navbarClasses}>
-      <Container>
-        <Box
-          className={clsx(
-            "flex gap-4 items-center justify-between",
-            "w-full",
-          )}
-        >
-          <Box className="flex-shrink-0">
-            <Left />
-          </Box>
+    <>
+      <Topbar />
 
-          <Box
+      <nav
+        className={clsx(
+          "flex items-center justify-between",
+          "h-16 xl:h-20 py-2 2xl:py-4",
+          "text-foreground",
+          "bg-background"
+        )}
+      >
+        <Container>
+          <Grid
             className={clsx(
-              "flex-grow",
-              "hidden md:block"
+              "grid-cols-2 md:grid-cols-3 2xl:grid-cols-6",
+              "2xl:gap-8 items-center",
             )}
           >
-            <Center />
-          </Box>
+            <GridItem className="col-span-1">
+              <Left />
+            </GridItem>
 
-          <Box className="flex-shrink-0">
-            <Right userData={currentUserData} />
-          </Box>
-        </Box>
-      </Container>
-    </nav>
+            <GridItem
+              className={clsx(
+                "col-span-1 2xl:col-span-3",
+              )}
+            >
+              <Center />
+            </GridItem>
+
+            <GridItem className="2xl:col-span-2">
+              <Right />
+            </GridItem>
+          </Grid>
+        </Container>
+      </nav>
+    </>
   );
 }

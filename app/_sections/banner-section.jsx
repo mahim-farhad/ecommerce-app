@@ -37,7 +37,7 @@ export default function BannerSection() {
   };
 
   return (
-    <Section className="!pt-4 sm:pt-8 md:pt-12 lg:py-16 xl:py-20">
+    <Section className="!py-0">
       <Container>
         <Grid
           className={clsx(
@@ -62,63 +62,18 @@ export default function BannerSection() {
                       <Link
                         className={clsx(
                           "w-full h-full",
-                          "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
+                          "h-full",
                           "overflow-hidden"
                         )}
-                        style={{
-                          backgroundImage:
-                            "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
-                          backgroundPosition: "42% top",
-                          backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                        }}
-                      />
-                    </CardHeader>
-
-                    <CardContent className={clsx("z-10 absolute bottom-0")}>
-                      <Box
-                        className={clsx(
-                          "w-full sm:w-auto",
-                          "py-4 md:py-8 px-6 md:px-10",
-                          "m-4 lg:m-8",
-                          "bg-black bg-opacity-75"
-                        )}
                       >
-                        <Typography
-                          type="h5"
-                          className={clsx(
-                            "mb-1",
-                            "font-semibold uppercase",
-                            "text-white"
-                          )}
-                        >
-                          Puja 2k24 collection
-                        </Typography>
-
-                        <Button size="sm" variant="text" asChild>
-                          <Link
-                            href="/shop"
-                            className={clsx(
-                              "inline-flex items-center",
-                              "h-auto p-0",
-                              "uppercase",
-                              "overflow-visible",
-                              "text-gray-200"
-                            )}
-                          >
-                            Shop Now
-                            <Icon
-                              name="ArrowRight"
-                              size="sm"
-                              className={clsx(
-                                "group-hover:translate-x-1",
-                                "transition-all duration-500 ease-in-out"
-                              )}
-                            />
-                          </Link>
-                        </Button>
-                      </Box>
-                    </CardContent>
+                        <picture>
+                          <source media="(min-width: 1024px)" srcset="https://www.fanatics.com/content/ws/all/cce122ce-4f3d-466d-a0ca-31f40593c02f__3200X1200.png" width="3200" height="1200" />
+                          <source media="(min-width: 640px)" srcset="https://www.fanatics.com/content/ws/all/32863b17-6909-4044-a279-944414c065fc__3200X1200.png" width="3200" height="1200" />
+                          <source media="(min-width: 0px)" srcset="https://www.fanatics.com/content/ws/all/4a018ac3-43d8-4cf1-a3f2-810b98c4c80d__1280X1600.png" width="1280" height="1600" />
+                          <img loading="lazy" alt="NFL Nike Football Shop Now" />
+                        </picture>
+                      </Link>
+                    </CardHeader>
                   </Card>
                 </CarouselItem>
 
@@ -128,128 +83,21 @@ export default function BannerSection() {
                       <Link
                         className={clsx(
                           "w-full h-full",
-                          "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
+                          "h-full",
                           "overflow-hidden"
                         )}
-                        style={{
-                          backgroundImage:
-                            "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
-                          backgroundPosition: "42% top",
-                          backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                        }}
-                      />
+                      >
+                        <picture>
+                          <source media="(min-width: 1024px)" srcset="https://www.fanatics.com/content/ws/all/aba33cda-4387-4fdd-93ac-c86196e8f0ae__3200X1200.png" width="3200" height="1200" />
+                          <source media="(min-width: 640px)" srcset="https://www.fanatics.com/content/ws/all/af4f5ba3-2953-4ce5-8349-fa08e99085de__3200X1200.png" width="3200" height="1200" />
+                          <source media="(min-width: 0px)" srcset="https://www.fanatics.com/content/ws/all/a6690f35-7821-4e8e-b95f-c26fd7ea0f5e__1280X1800.png" width="1280" height="1600" />
+                          <img loading="lazy" alt="NFL Nike Football Shop Now" />
+                        </picture>
+                      </Link>
                     </CardHeader>
 
                     <CardContent className={clsx("z-10 absolute bottom-0")}>
-                      <Box
-                        className={clsx(
-                          "w-full sm:w-auto",
-                          "py-4 md:py-8 px-6 md:px-10",
-                          "m-4 lg:m-8",
-                          "bg-black bg-opacity-75"
-                        )}
-                      >
-                        <Typography
-                          type="h5"
-                          className={clsx(
-                            "mb-1",
-                            "font-semibold uppercase",
-                            "text-white"
-                          )}
-                        >
-                          Puja 2k24 collection
-                        </Typography>
 
-                        <Button size="sm" variant="text" asChild>
-                          <Link
-                            href="/shop"
-                            className={clsx(
-                              "inline-flex items-center",
-                              "h-auto p-0",
-                              "uppercase",
-                              "overflow-visible",
-                              "text-gray-200"
-                            )}
-                          >
-                            Shop Now
-                            <Icon
-                              name="ArrowRight"
-                              size="sm"
-                              className={clsx(
-                                "group-hover:translate-x-1",
-                                "transition-all duration-500 ease-in-out"
-                              )}
-                            />
-                          </Link>
-                        </Button>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-
-                <CarouselItem>
-                  <Card className={clsx("overflow-hidden", "group")}>
-                    <CardHeader>
-                      <Link
-                        className={clsx(
-                          "w-full h-full",
-                          "min-h-[390px] md:min-h-[490px] lg:min-h-[590px]",
-                          "overflow-hidden"
-                        )}
-                        style={{
-                          backgroundImage:
-                            "url(https://cdn.kaykraft.com/wp-content/uploads/2024/05/homepage-slider-1-resized.jpg)",
-                          backgroundPosition: "42% top",
-                          backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                        }}
-                      />
-                    </CardHeader>
-
-                    <CardContent className={clsx("z-10 absolute bottom-0")}>
-                      <Box
-                        className={clsx(
-                          "w-full sm:w-auto",
-                          "py-4 md:py-8 px-6 md:px-10",
-                          "m-4 lg:m-8",
-                          "bg-black bg-opacity-75"
-                        )}
-                      >
-                        <Typography
-                          type="h5"
-                          className={clsx(
-                            "mb-1",
-                            "font-semibold uppercase",
-                            "text-white"
-                          )}
-                        >
-                          Puja 2k24 collection
-                        </Typography>
-
-                        <Button size="sm" variant="text" asChild>
-                          <Link
-                            href="/shop"
-                            className={clsx(
-                              "inline-flex items-center",
-                              "h-auto p-0",
-                              "uppercase",
-                              "overflow-visible",
-                              "text-gray-200"
-                            )}
-                          >
-                            Shop Now
-                            <Icon
-                              name="ArrowRight"
-                              size="sm"
-                              className={clsx(
-                                "group-hover:translate-x-1",
-                                "transition-all duration-500 ease-in-out"
-                              )}
-                            />
-                          </Link>
-                        </Button>
-                      </Box>
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -265,7 +113,7 @@ export default function BannerSection() {
               <CardHeader>
                 <Link>
                   <Image
-                    src="https://www.thebengalstore.com/uploads/blog/133675404342430351724740478.jpg"
+                    src="https://www.fanatics.com/content/ws/all/e0e9e29f-e370-43b3-a2c5-a8e4661d6e78__1600X1108.png"
                     alt=""
                   />
                 </Link>
@@ -278,7 +126,7 @@ export default function BannerSection() {
               <CardHeader>
                 <Link>
                   <Image
-                    src="https://www.thebengalstore.com/uploads/blog/102223845091051101724220891.jpg"
+                    src="https://www.fanatics.com/content/ws/all/799fe510-67da-4655-9360-74d4f2b396a5__1600X1108.png"
                     alt=""
                   />
                 </Link>
@@ -291,7 +139,7 @@ export default function BannerSection() {
               <CardHeader>
                 <Link>
                   <Image
-                    src="https://www.thebengalstore.com/uploads/blog/217779815599986091720681809.jpg"
+                    src="https://www.fanatics.com/content/ws/all/c7bd4952-d3ca-4602-9fa8-e477d13c2510__1600X1108.png"
                     alt=""
                   />
                 </Link>

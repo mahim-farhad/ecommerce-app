@@ -2,7 +2,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 import { white, gray, black } from "tailwindcss/colors";
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
 	darkMode: ["class"],
 	content: [
@@ -15,10 +15,12 @@ module.exports = {
 			sm: "40rem",
 			md: "48rem",
 			lg: "64rem",
-			xl: "80rem"
+			xl: "80rem",
+			"2xl": "1560px",
 		},
 		fontFamily: {
 			sans: ["var(--font-poppins)", ...fontFamily.sans],
+			block: ["var(--font-akira-expanded)", ...fontFamily.serif],
 			serif: ["var(--font-roboto-condensed)", ...fontFamily.serif],
 			mono: ["var(--font-firaCode)", ...fontFamily.mono]
 		},
@@ -29,36 +31,36 @@ module.exports = {
 			white: white,
 			gray: gray,
 			black: black,
-			background: 'hsl(var(--background))',
-			foreground: 'hsl(var(--foreground))',
+			background: "hsl(var(--background))",
+			foreground: "hsl(var(--foreground))",
 			primary: {
-				DEFAULT: 'hsl(var(--primary))',
-				foreground: 'hsl(var(--primary-foreground))'
+				DEFAULT: "hsl(var(--primary))",
+				foreground: "hsl(var(--primary-foreground))"
 			},
 			secondary: {
-				DEFAULT: 'hsl(var(--secondary))',
-				foreground: 'hsl(var(--secondary-foreground))'
+				DEFAULT: "hsl(var(--secondary))",
+				foreground: "hsl(var(--secondary-foreground))"
 			},
 			muted: {
-				DEFAULT: 'hsl(var(--muted))',
-				foreground: 'hsl(var(--muted-foreground))'
+				DEFAULT: "hsl(var(--muted))",
+				foreground: "hsl(var(--muted-foreground))"
 			},
 			accent: {
-				DEFAULT: 'hsl(var(--accent))',
-				foreground: 'hsl(var(--accent-foreground))'
+				DEFAULT: "hsl(var(--accent))",
+				foreground: "hsl(var(--accent-foreground))"
 			},
 			destructive: {
-				DEFAULT: 'hsl(var(--destructive))',
-				foreground: 'hsl(var(--destructive-foreground))'
+				DEFAULT: "hsl(var(--destructive))",
+				foreground: "hsl(var(--destructive-foreground))"
 			},
-			border: 'hsl(var(--border))',
-			input: 'hsl(var(--input))',
+			border: "hsl(var(--border))",
+			input: "hsl(var(--input))",
 			chart: {
-				'1': 'hsl(var(--chart-1))',
-				'2': 'hsl(var(--chart-2))',
-				'3': 'hsl(var(--chart-3))',
-				'4': 'hsl(var(--chart-4))',
-				'5': 'hsl(var(--chart-5))'
+				"1": "hsl(var(--chart-1))",
+				"2": "hsl(var(--chart-2))",
+				"3": "hsl(var(--chart-3))",
+				"4": "hsl(var(--chart-4))",
+				"5": "hsl(var(--chart-5))"
 			},
 			google: "#3c7ff1",
 			github: "#2B3137",

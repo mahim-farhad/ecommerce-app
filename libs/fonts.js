@@ -1,7 +1,6 @@
-import {
-  Poppins, Roboto_Condensed,
-  Fira_Code
-} from "next/font/google";
+import { Poppins, Roboto_Condensed, Fira_Code } from "next/font/google";
+
+import localFont from "next/font/local";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,6 +14,12 @@ const poppins = Poppins({
   ],
   variable: "--font-poppins",
   display: "swap"
+});
+
+const akiraExpanded = localFont({
+  src: "../public/fonts/AkiraExpanded.otf",
+  weight: "900",
+  variable: "--font-akira-expanded",
 });
 
 const robotoCondensed = Roboto_Condensed({
@@ -47,4 +52,4 @@ const firaCode = Fira_Code({
   display: "swap"
 });
 
-export { poppins, robotoCondensed, firaCode };
+export { poppins, akiraExpanded, robotoCondensed, firaCode };

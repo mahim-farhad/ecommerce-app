@@ -1,19 +1,33 @@
 import clsx from "clsx";
 
+import Typography from "@components/ui/typography";
+import Link from "@components/ui/link";
 import CustomIcon from "@components/ui/custom-icon";
-
-import Box from "@components/layouts/box";
 
 export default function Left() {
   return (
-    <Box>
+    <Link
+      href="/"
+      className={clsx(
+        "flex gap-4 items-center"
+      )}
+    >
       <CustomIcon
-        name="brand"
+        name="brand3"
         className={clsx(
-          "w-10 sm:w-12",
-          "h-10 sm:h-12"
+          "w-10 h-10"
         )}
       />
-    </Box>
+
+      <Typography
+        type="h4"
+        className={clsx(
+          "font-block",
+          "tracking-[-0.022em]"
+        )}
+      >
+        Raphix.
+      </Typography>
+    </Link>
   );
 }

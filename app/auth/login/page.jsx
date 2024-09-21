@@ -1,5 +1,7 @@
 "use client";
 
+import { signIn } from "next-auth/react";
+
 import Icon from "@components/ui/icon";
 import CustomIcon from "@components/ui/custom-icon";
 import Link from "@components/ui/link";
@@ -30,16 +32,22 @@ export default function Login() {
             ]}
           >
             <Box className={["space-y-4", "mb-4"]}>
-              <Button className="w-full bg-google" size="lg">
+              <Button
+                className="w-full bg-google"
+                size="lg"
+                onClick={() => signIn("google")}
+              >
                 <CustomIcon name="google" />
                 Login with Google
               </Button>
 
-              <Button className="w-full bg-github" size="lg" asChild>
-                <Link href="#">
-                  <Icon name="Github" />
-                  Login with Github
-                </Link>
+              <Button
+                className="w-full bg-github"
+                size="lg"
+                onClick={() => signIn("github")}
+              >
+                <Icon name="Github" />
+                Login with Github
               </Button>
             </Box>
 

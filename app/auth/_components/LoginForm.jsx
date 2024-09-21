@@ -146,7 +146,7 @@ export default function LoginForm() {
             disabled={isPending}
           >
             {isPending ? (
-              <Icon name="LoaderCircle" />
+              <Icon name="LoaderCircle" className="animate-spin" />
             ) : (
               "Submit"
             )}

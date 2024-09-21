@@ -5,19 +5,43 @@ export const navigations = [{
 }, {
   id: 2,
   path: "/shop",
-  name: "Shop"
+  name: "Shop All"
 }, {
   id: 3,
-  path: "/stores",
-  name: "Brands"
+  path: "/custom-designs",
+  name: "Custom Designs"
 }, {
   id: 4,
-  path: "/blogs",
-  name: "Blogs"
+  path: "/team-wear",
+  name: "Team Wears"
 }, {
   id: 5,
-  path: "/contact",
-  name: "Contact"
+  path: "/pro-wear",
+  name: "Pro Wear"
+}];
+
+export const navigations2 = [{
+  id: 1,
+  path: "/shipping",
+  name: "Shipping"
+}, {
+  id: 2,
+  path: "/track-order",
+  name: "Track Order"
+}, {
+  id: 3,
+  path: "/support",
+  name: "Support"
+}];
+
+export const navRight = [{
+  id: 1,
+  path: "#",
+  name: "USD",
+}, {
+  id: 2,
+  path: "#",
+  name: "EN"
 }];
 
 export const customerCare = [{

@@ -20,7 +20,7 @@ const getSizeVariant = (size, iconOnly) => {
       : sizeVariants?.[size];
 
   return sizeVariant;
-}
+};
 
 function getColorVariant(variant, color) {
   const colorVariants = {
@@ -124,8 +124,6 @@ function getColorVariant(variant, color) {
         "bg-transparent",
         "border-transparent",
         "shadow-none",
-        "hover:text-primary-foreground",
-        "hover:bg-primary",
       ],
       secondary: [
         "text-secondary",
