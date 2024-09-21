@@ -29,7 +29,7 @@ export default function Navbar() {
       <nav
         className={clsx(
           "flex items-center justify-between",
-          "h-16 xl:h-20 py-2 2xl:py-4",
+          "h-16 xl:h-20 py-3 2xl:py-4",
           "text-foreground",
           "bg-background"
         )}
@@ -38,14 +38,14 @@ export default function Navbar() {
           <Grid
             className={clsx(
               "flex items-center justify-between",
-              "gap-8 2xl:gap-12",
+              "gap-4 md:gap-x-8 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20"
             )}
           >
             <GridItem className="flex-shrink-0">
               <Left />
             </GridItem>
 
-            <GridItem className="flex-grow">
+            <GridItem className="flex-grow hidden md:block">
               <Center />
             </GridItem>
 

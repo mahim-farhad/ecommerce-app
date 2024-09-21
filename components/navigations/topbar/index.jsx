@@ -11,10 +11,14 @@ import Link from "@components/ui/link";
 import CustomIcon from "@components/ui/custom-icon";
 import Icon from "@components/ui/icon";
 import Button from "@components/ui/button";
+
 import { List, ListItem } from "@components/ui/list";
 import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuGroup, DropdownMenuCheckboxItem,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuCheckboxItem,
 } from "@components/ui/dropdown-menu";
 
 import Container from "@components/layouts/container";
@@ -24,7 +28,7 @@ export default function Topbar() {
   const [position, setPosition] = useState("bottom");
 
   return (
-    <Box>
+    <Box className="hidden lg:block">
       <Container>
         <Box
           className={clsx(
@@ -33,40 +37,26 @@ export default function Topbar() {
             "border-b"
           )}
         >
-          <Box
-            className={clsx(
-              "flex gap-2 items-center flex-shrink-0",
-            )}
-          >
-            <Icon name="Truck" />
-
-            <Typography type="small" className="text-xs">
-              Free shipping worldwide
-            </Typography>
-          </Box>
-
-          <List className={clsx("flex-row items-center md:mr-auto hidden lg:flex")}>
+          <List className={clsx("flex-row items-center md:mr-auto")}>
             {navigations2?.map((navigation) => (
               <ListItem key={navigation?.id}>
                 <Link
                   href={`${navigation?.path}`}
                   className={clsx(
-                    "relative inline-flex items-center",
+                    "relative items-center hidden md:inline-flex",
                     "h-12 py-2 px-4",
                     "font-sans text-xs font-medium",
                     "uppercase",
                     "text-foreground",
                     "bg-transparent",
-                    "hover:text-accent",
+                    "hover:text-accent"
                   )}
                 >
                   {navigation?.name}
                 </Link>
               </ListItem>
             ))}
-          </List>
 
-          <List className={clsx("flex-row items-center md:mr-auto lg:mr-0")}>
             {navRight?.map((navigation) => (
               <ListItem key={navigation?.id}>
                 <DropdownMenu>
@@ -81,7 +71,10 @@ export default function Topbar() {
                   </DropdownMenuTrigger>
 
                   <DropdownMenuContent align="end" className="min-w-48">
-                    <DropdownMenuGroup value={position} onValueChange={setPosition}>
+                    <DropdownMenuGroup
+                      value={position}
+                      onValueChange={setPosition}
+                    >
                       <DropdownMenuCheckboxItem value="top">
                         Top
                       </DropdownMenuCheckboxItem>
@@ -100,11 +93,7 @@ export default function Topbar() {
             ))}
           </List>
 
-          <List
-            className={clsx(
-              "flex-row flex-wrap gap-4 hidden md:flex flex-shrink-0",
-            )}
-          >
+          <List className={clsx("flex-row flex-wrap gap-4 flex-shrink-0")}>
             {socials?.map((social) => (
               <ListItem key={social?.id}>
                 <Link href={social?.path}>

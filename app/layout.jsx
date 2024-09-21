@@ -1,10 +1,8 @@
-import {
-  poppins, akiraExpanded, robotoCondensed, firaCode
-} from "@libs/fonts";
+import { poppins, akiraExpanded, robotoCondensed, firaCode } from "@libs/fonts";
 
 import clsx from "clsx";
 
-import { getServerSession } from 'next-auth';
+import { getServerSession } from "next-auth";
 
 import "@styles/globals.css";
 
@@ -12,7 +10,11 @@ import { getCurrentUser } from "@api/users";
 
 // import { authOptions } from '@api/auth/[...nextauth]/authOptions';
 
-import { ThemeProvider, SessionProvider, TooltipProvider } from "@libs/providers";
+import {
+  ThemeProvider,
+  SessionProvider,
+  TooltipProvider,
+} from "@libs/providers";
 
 import { CartProvider } from "@contexts/CartContext";
 import { WishtlistProvider } from "@contexts/WishlistContext";
@@ -30,7 +32,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "rgb(0 0 0)",
+  themeColor: "rgb(230 220 100)",
 };
 
 export default async function RootLayout({ children }) {

@@ -19,16 +19,19 @@ import Box from "@components/layouts/box";
 
 export default function FilterProducts() {
   return (
-    <Box>
+    <Box className="mb-4">
       <Container>
         <form
           className={clsx("flex flex-wrap lg:flex-nowrap gap-1 items-center")}
         >
           <Select>
             <SelectTrigger
-              size="lg"
               placeholder="All Categories"
-              className={clsx("shrink-0", "order-1", "lg:w-60 uppercase")}
+              className={clsx(
+                "hidden md:flex shrink-0",
+                "order-1",
+                "lg:w-60 uppercase"
+              )}
             />
 
             <SelectContent>
@@ -42,16 +45,18 @@ export default function FilterProducts() {
 
           <Input
             type="search"
-            size="lg"
             placeholder="Search for items and brands"
             className={clsx("flex-1", "order-3 lg:order-2")}
           />
 
           <Select>
             <SelectTrigger
-              size="lg"
               placeholder="All Dealers"
-              className={clsx("shrink-0", "order-1 lg:order-3", "lg:w-60")}
+              className={clsx(
+                "hidden md:flex shrink-0",
+                "order-1 lg:order-3",
+                "lg:w-60"
+              )}
             />
 
             <SelectContent>
@@ -61,10 +66,7 @@ export default function FilterProducts() {
             </SelectContent>
           </Select>
 
-          <Button
-            size="lg"
-            className={clsx("shrink-0", "order-4", "border-border")}
-          >
+          <Button className={clsx("shrink-0", "order-4", "border-border")}>
             <span className="hidden sm:inline-block">Brouse Products</span>
 
             <Icon name="Search" />

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 import { usePathname } from "next/navigation";
 
@@ -14,87 +14,98 @@ import Button from "@components/ui/button";
 
 import { List, ListItem } from "@components/ui/list";
 import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuGroup, DropdownMenuItem,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuGroup,
 } from "@components/ui/dropdown-menu";
 
 export default function Center() {
   const router = usePathname();
 
-  const [visibleItems, setVisibleItems] = useState(navigations);
+  const [visibleItems, setVisibleItems] = useState([]);
   const [dropdownItems, setDropdownItems] = useState([]);
 
+  const updateVisibility = () => {
+    const width = window.innerWidth;
+
+    let visibleCount = navigations.length;
+
+    if (width >= 1064) {
+      visibleCount = navigations.length - 2;
+    } else if (width >= 768) {
+      visibleCount = navigations.length - 3;
+    }
+
+    setVisibleItems(navigations.slice(0, visibleCount));
+
+    setDropdownItems(navigations.slice(visibleCount));
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      const breakpoint = 1560;
+    updateVisibility();
 
-      if (window.innerWidth >= breakpoint) {
-        setVisibleItems(navigations);
+    window.addEventListener("resize", updateVisibility);
 
-        setDropdownItems([]);
-      } else {
-        const visibleCount = Math.floor((window.innerWidth - 1560) / 100);
-
-        console.log(window.innerWidth, visibleCount);
-
-        setVisibleItems(navigations.slice(0, visibleCount));
-
-        setDropdownItems(navigations.slice(visibleCount));
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", updateVisibility);
   }, []);
 
   return (
-    <>
-      <List className={clsx("flex-row items-center")}>
-        {visibleItems?.map((navigation) => (
-          <ListItem key={navigation?.id}>
-            <Link
-              href={`${navigation?.path}`}
-              className={clsx(
-                "relative inline-flex items-center",
-                "h-12 py-2 px-4",
-                "font-sans text-sm leading-[17px] font-medium",
-                "uppercase",
-                router !== navigation?.path ?
-                  "text-foreground" : "text-accent",
-                "bg-transparent",
-                "hover:text-primary",
-              )}
-            >
-              {navigation?.name}
-            </Link>
-          </ListItem>
-        ))}
+    <List className={clsx("flex-row items-center")}>
+      {visibleItems?.map((navigation) => (
+        <ListItem key={navigation?.id}>
+          <Link
+            href={navigation?.path}
+            className={clsx(
+              "relative",
+              "inline-flex items-center",
+              "h-12 py-2 px-4",
+              "font-sans text-sm leading-[17px] font-medium",
+              "uppercase",
+              router !== navigation?.path ? "text-foreground" : "text-accent",
+              "bg-transparent",
+              "hover:text-accent"
+            )}
+          >
+            {navigation?.name}
+          </Link>
+        </ListItem>
+      ))}
 
-        {dropdownItems.length > 0 && (
-          <ListItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button size="xs" variant="text">
-                  <Icon name="ChevronDown" />
-                </Button>
-              </DropdownMenuTrigger>
+      {dropdownItems?.length > 0 && (
+        <ListItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="text" size="sm">
+                <Icon name="Ellipsis" />
+              </Button>
+            </DropdownMenuTrigger>
 
-              <DropdownMenuContent align="end" className="min-w-48">
-                <DropdownMenuGroup>
-                  {dropdownItems?.map((item) => (
-                    <DropdownMenuItem key={item.id}>
-                      {item?.name}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </ListItem>
-        )}
-      </List>
-    </>
+            <DropdownMenuContent align="end" className="min-w-full">
+              <DropdownMenuGroup className="flex items-center">
+                {dropdownItems?.map((item) => (
+                  <Link
+                    key={item?.id}
+                    href={item?.path}
+                    className={clsx(
+                      "relative",
+                      "inline-flex items-center",
+                      "h-12 py-2 px-4",
+                      "font-sans text-sm leading-[17px] font-medium",
+                      "uppercase",
+                      router !== item?.path ? "text-foreground" : "text-accent",
+                      "bg-transparent",
+                      "hover:text-accent"
+                    )}
+                  >
+                    {item?.name}
+                  </Link>
+                ))}
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </ListItem>
+      )}
+    </List>
   );
 }

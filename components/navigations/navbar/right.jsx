@@ -14,6 +14,7 @@ import Button from "@components/ui/button";
 import { List, ListItem } from "@components/ui/list";
 
 import Box from "@components/layouts/box";
+import ThemeToggle from "@components/ui/theme-toggle";
 
 export default function Right() {
   const { totalWishlistItems } = useWishlist();
@@ -23,24 +24,20 @@ export default function Right() {
 
   return (
     <List className="flex-row items-center justify-end">
+      <ListItem>
+        <ThemeToggle />
+      </ListItem>
+
       <ListItem className="hidden sm:block">
-        <Button
-          size="sm"
-          variant="text"
-          asChild
-        >
+        <Button size="sm" variant="text" asChild>
           <Link
             href="/account"
-            className={clsx(
-              "px-[9px]",
-              "overflow-visible",
-              "text-sm",
-            )}
+            className={clsx("px-[9px]", "overflow-visible", "text-sm")}
           >
             <Box className="relative">
               <Icon name="User" />
 
-              {totalWishlistItems > 0 &&
+              {totalWishlistItems > 0 && (
                 <span
                   className={clsx(
                     "absolute -right-4 -top-4",
@@ -50,39 +47,29 @@ export default function Right() {
                     "text-white bg-accent",
                     "border-2",
                     "border-white",
-                    "rounded-full",
+                    "rounded-full"
                   )}
                 >
                   {totalWishlistItems}
                 </span>
-              }
+              )}
             </Box>
 
-            <span className="hidden xl:block">
-              Account
-            </span>
+            <span className="hidden xl:block">Account</span>
           </Link>
         </Button>
       </ListItem>
 
       <ListItem className="hidden sm:block">
-        <Button
-          size="sm"
-          variant="text"
-          asChild
-        >
+        <Button size="sm" variant="text" asChild>
           <Link
             href="/wishlist"
-            className={clsx(
-              "px-[9px]",
-              "overflow-visible",
-              "text-sm",
-            )}
+            className={clsx("px-[9px]", "overflow-visible", "text-sm")}
           >
             <Box className="relative">
               <Icon name="Heart" />
 
-              {totalWishlistItems > 0 &&
+              {totalWishlistItems > 0 && (
                 <span
                   className={clsx(
                     "absolute -right-4 -top-4",
@@ -92,39 +79,29 @@ export default function Right() {
                     "text-white bg-accent",
                     "border-2",
                     "border-white",
-                    "rounded-full",
+                    "rounded-full"
                   )}
                 >
                   {totalWishlistItems}
                 </span>
-              }
+              )}
             </Box>
 
-            <span className="hidden xl:block">
-              Wishlist
-            </span>
+            <span className="hidden xl:block">Wishlist</span>
           </Link>
         </Button>
       </ListItem>
 
       <ListItem className="hidden sm:block">
-        <Button
-          size="sm"
-          variant="text"
-          asChild
-        >
+        <Button size="sm" variant="text" asChild>
           <Link
             href="/cart"
-            className={clsx(
-              "px-[9px]",
-              "overflow-visible",
-              "text-sm",
-            )}
+            className={clsx("px-[9px] md:pr-0", "overflow-visible", "text-sm")}
           >
             <Box className="relative">
               <Icon name="ShoppingBag" />
 
-              {totalWishlistItems > 0 &&
+              {totalWishlistItems > 0 && (
                 <span
                   className={clsx(
                     "absolute -right-4 -top-4",
@@ -134,37 +111,24 @@ export default function Right() {
                     "text-white bg-accent",
                     "border-2",
                     "border-white",
-                    "rounded-full",
+                    "rounded-full"
                   )}
                 >
                   {totalCartItems}
                 </span>
-              }
+              )}
             </Box>
 
-            <span className="hidden xl:block">
-              Cart
-            </span>
+            <span className="hidden xl:block">Cart</span>
           </Link>
         </Button>
       </ListItem>
 
-      <ListItem className="lg:hidden">
-        <Button
-          size="sm"
-          variant="text"
-          iconOnly
-          onClick={openSidebar}
-        >
-          <Icon
-            size="lg"
-            name="Menu"
-            className="text-foreground-muted"
-          />
+      <ListItem className="md:hidden">
+        <Button size="sm" variant="text" iconOnly onClick={openSidebar}>
+          <Icon size="lg" name="Menu" className="text-foreground-muted" />
 
-          <span className="sr-only">
-            Toggle Sidebar Menu
-          </span>
+          <span className="sr-only">Toggle Sidebar Menu</span>
         </Button>
       </ListItem>
     </List>
