@@ -37,23 +37,19 @@ export default function Navbar() {
         <Container>
           <Grid
             className={clsx(
-              "grid-cols-2 md:grid-cols-3 2xl:grid-cols-6",
-              "2xl:gap-8 items-center",
+              "flex items-center justify-between",
+              "gap-8 2xl:gap-12",
             )}
           >
-            <GridItem className="col-span-1">
+            <GridItem className="flex-shrink-0">
               <Left />
             </GridItem>
 
-            <GridItem
-              className={clsx(
-                "col-span-1 2xl:col-span-3",
-              )}
-            >
+            <GridItem className="flex-grow">
               <Center />
             </GridItem>
 
-            <GridItem className="2xl:col-span-2">
+            <GridItem className="flex-shrink-0">
               <Right />
             </GridItem>
           </Grid>
