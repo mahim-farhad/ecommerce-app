@@ -1,0 +1,37 @@
+{
+	"name": "Raphix Ecommerce PWA app",
+	"short_name": "Raphix Design",
+	"description": "A Progressive Web App built with Next.js for Raphix Design and Store",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#FFFFFF",
+	"theme_color": "#FFFFFF",
+	"icons": [
+		{
+			"src": "/icons/apple-touch-icon.png",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/android-chrome-16x16.png",
+			"sizes": "16x16",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/icons/android-chrome-32x32.png",
+			"sizes": "32x32",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/icons/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

@@ -31,7 +31,9 @@ export default function Center() {
 
     let visibleCount = navigations.length;
 
-    if (width >= 1064) {
+    if (width >= 1460) {
+      visibleCount = navigations.length - 0;
+    } else if (width >= 1064) {
       visibleCount = navigations.length - 2;
     } else if (width >= 768) {
       visibleCount = navigations.length - 3;

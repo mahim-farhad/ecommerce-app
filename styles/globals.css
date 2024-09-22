@@ -6,6 +6,18 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+}
+
 .bouncy {
   transform: translateZ(0);
   backface-visibility: hidden;

@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 const akiraExpanded = localFont({
-  src: "../public/fonts/AkiraExpanded.otf",
+  src: "../public/fonts/akira-expanded/AkiraExpanded.otf",
   weight: "900",
   variable: "--font-akira-expanded",
 });
