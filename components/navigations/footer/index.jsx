@@ -5,10 +5,8 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import {
-  customerCare,
-  legalServices,
-  socials,
-  paymentMethods,
+  customerCare, legalServices,
+  socials, paymentMethods,
 } from "@utils/objects";
 
 import CustomIcon from "@components/ui/custom-icon";
@@ -19,40 +17,33 @@ import { List, ListItem } from "@components/ui/list";
 import Container from "@components/layouts/container";
 import { Grid, GridItem } from "@components/layouts/grid";
 import Box from "@components/layouts/box";
+import Icon from "@components/ui/icon";
+import Separator from "@components/ui/separator";
+import Input from "@components/forms/input";
+import Button from "@components/ui/button";
 
 function Brand() {
   return (
-    <Box className={clsx("flex gap-4 items-center")}>
+    <Link
+      href="/"
+      className={clsx("flex gap-4 items-center")}
+    >
       <CustomIcon
-        name="brand"
+        name="brand3"
         className={clsx("w-12 md:w-16", "h-12 md:h-16", "text-white")}
       />
 
-      <Box>
-        <Typography
-          type="h5"
-          className={clsx(
-            "font-semibold uppercase",
-            "leading-none",
-            "text-gray-100"
-          )}
-        >
-          Bangladeshi
-        </Typography>
-
-        <Typography
-          type="h5"
-          className={clsx(
-            "lg:-mt-2 ml-8",
-            "font-semibold uppercase",
-            "leading-none",
-            "text-gray-100"
-          )}
-        >
-          Handicrafts
-        </Typography>
-      </Box>
-    </Box>
+      <Typography
+        type="h4"
+        className={clsx(
+          "font-block !leading-[31px]",
+          "uppercase",
+          "tracking-[-0.022em]"
+        )}
+      >
+        Raphix.
+      </Typography>
+    </Link>
   );
 }
 
@@ -161,6 +152,82 @@ function LegalServices() {
   );
 }
 
+function Newsletter() {
+  return (
+    <Box
+      className={clsx(
+        "-my-1.5 xl:my-0",
+        "text-start md:text-end",
+      )}
+    >
+      <Typography
+        type="h6"
+        className={clsx(
+          "mt-1",
+          "mb-4",
+          "font-semibold",
+        )}
+      >
+        RECEIVE OFFERS & DISCOUNTS
+      </Typography>
+
+      <Typography
+        type="small"
+        className={clsx(
+          "mb-3.5",
+          "md:ml-auto",
+          "capitalize",
+        )}
+      >
+        All the lorem ipsum generators on the <br />
+        Internet tend making the.
+      </Typography>
+
+      <Box
+        className={clsx(
+          "flex",
+          "gap-2",
+          "items-center",
+          "bg-white",
+          "border",
+          "rounded-lg",
+        )}
+      >
+        <Input
+          className={clsx(
+            "flex-1",
+            "h-12",
+            "border-0",
+          )}
+          placeholder="Email Address"
+        />
+
+        <Button
+          size="xs"
+          color="secondary"
+          className={clsx(
+            "px-3",
+            "mx-2",
+          )}
+        >
+          Subscribe
+        </Button>
+      </Box>
+
+      <Typography
+        type="small"
+        className={clsx(
+          "mt-2",
+          "text-sm",
+          "capitalize",
+        )}
+      >
+        We will never share your email with third parties.
+      </Typography>
+    </Box>
+  );
+}
+
 function Socials() {
   return (
     <Box className="mb-2">
@@ -217,27 +284,36 @@ export default function Footer() {
       <Container>
         <Grid
           className={clsx(
-            "grid-cols-1 xl:grid-cols-5",
-            "gap-y-8 xl:gap-y-20",
+            "grid-cols-1 sm:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8",
+            "gap-y-8 sm:gap-y-12 lg:gap-y-16",
             "py-8 md:py-12 lg:py-16 xl:py-20",
             "px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20",
-            "bg-black dark:bg-white/5"
+            "-mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 xl:-mx-20",
+            // "bg-black dark:bg-white/5",
+            "border-y",
           )}
-          style={{
-            backgroundImage:
-              "url(https://yevgenysim-turkey.github.io/shopper/assets/img/patterns/pattern-2.svg)",
-            backgroundPosition: "50%",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
+        // style={{
+        //   backgroundImage:
+        //     "url(https://yevgenysim-turkey.github.io/shopper/assets/img/patterns/pattern-2.svg)",
+        //   backgroundPosition: "50%",
+        //   backgroundSize: "cover",
+        //   backgroundRepeat: "no-repeat",
+        // }}
         >
-          <GridItem className={clsx("col-span-full xl:col-span-2")}>
+          <GridItem
+            className={clsx(
+              "col-span-full md:col-span-2 xl:col-span-full 2xl:col-span-2",
+            )}
+          >
             <Box
               className={clsx(
-                "flex flex-col",
-                "gap-y-4 xl:gap-y-2",
-                "xl:justify-between",
-                "h-full"
+                "flex",
+                "flex-col xl:flex-row 2xl:flex-col",
+                "gap-y-4 2xl:gap-y-4",
+                "xl:gap-x-16 ",
+                "items-start xl:items-center 2xl:items-start",
+                "md:justify-between",
+                "h-full",
               )}
             >
               <Brand />
@@ -246,7 +322,7 @@ export default function Footer() {
                 className={clsx(
                   "w-full md:w-3/5 xl:w-full",
                   "pr-8 mb-2",
-                  "text-sm",
+                  "!text-sm",
                   "text-muted-foreground"
                 )}
               >
@@ -255,22 +331,96 @@ export default function Footer() {
                 Country
               </Typography>
 
-              <Socials />
+              {/* <Socials /> */}
+
+              <Link
+                className={clsx(
+                  "flex",
+                  "xl:flex-row-reverse 2xl:flex-row",
+                  "gap-4",
+                  "xl:text-end 2xl:text-start",
+                )}
+              >
+                <Icon
+                  name="Headset"
+                  className={clsx(
+                    "w-12",
+                    "h-12",
+                  )}
+                />
+
+                <Box>
+                  <Typography
+                    type="small"
+                    className={clsx(
+                      "uppercase",
+                    )}
+                  >
+                    Hotline Free 24/7
+                  </Typography>
+
+                  <Typography
+                    type="h5"
+                    className={clsx(
+                      "font-serif",
+                      "font-medium",
+                    )}
+                  >
+                    (+100) 123 456 7890
+                  </Typography>
+                </Box>
+              </Link>
             </Box>
           </GridItem>
 
-          <GridItem className={clsx("col-span-full xl:col-span-3")}>
+          <Box
+            className={clsx(
+              "2xl:hidden",
+              "col-span-full",
+            )}
+          >
+            <Separator />
+          </Box>
+
+          <GridItem
+            className={clsx(
+              "col-span-full lg:col-span-full xl:col-span-4",
+            )}
+          >
             <Box
               className={clsx(
-                "flex flex-col md:flex-row",
+                "flex",
+                "flex-col sm:flex-row",
+                "gap-y-8",
                 "gap-y-8 xl:gap-x-20",
-                "justify-start sm:justify-between xl:justify-end"
+                "sm:justify-between xl:justify-end 2xl:justify-center",
               )}
             >
               <CustomerCare />
 
+              <Separator className="sm:hidden" />
+
               <LegalServices />
             </Box>
+          </GridItem>
+
+          <Box
+            className={clsx(
+              "md:hidden",
+              "col-span-full",
+            )}
+          >
+            <Separator />
+          </Box>
+
+          <GridItem
+            className={clsx(
+              "md:row-start-1 xl:row-start-3 2xl:row-start-1",
+              "md:col-start-3 xl:col-start-5 2xl:col-start-7",
+              "col-span-full md:col-span-2",
+            )}
+          >
+            <Newsletter />
           </GridItem>
         </Grid>
 

@@ -18,7 +18,7 @@ export default async function VendorsSection() {
         <Box className="mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <Typography className="text-gray-400">Top Sellers</Typography>
 
-          <Typography type="h2">Featured Vendors</Typography>
+          <Typography type="h2" className="font-block">Featured Vendors</Typography>
         </Box>
 
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

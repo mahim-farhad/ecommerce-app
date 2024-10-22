@@ -14,10 +14,8 @@ import Button from "@components/ui/button";
 
 import { List, ListItem } from "@components/ui/list";
 import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenu, DropdownMenuTrigger,
+  DropdownMenuContent, DropdownMenuGroup,
   DropdownMenuCheckboxItem,
 } from "@components/ui/dropdown-menu";
 
@@ -28,15 +26,33 @@ export default function Topbar() {
   const [position, setPosition] = useState("bottom");
 
   return (
-    <Box className="hidden lg:block">
+    <Box
+      className={clsx(
+        "hidden lg:block",
+        "text-white bg-black"
+      )}
+    >
       <Container>
         <Box
           className={clsx(
-            "flex gap-8 items-center justify-between",
+            "flex gap-20 items-center justify-between",
             "h-12 py-2",
-            "border-b"
           )}
         >
+          <Box
+            className={clsx(
+              "flex",
+              "gap-2",
+              "items-center"
+            )}
+          >
+            <Icon name="Truck" />
+
+            <Typography type="p" className="!text-sm text-white">
+              Free shipping worldwide above 300$
+            </Typography>
+          </Box>
+
           <List className={clsx("flex-row items-center md:mr-auto")}>
             {navigations2?.map((navigation) => (
               <ListItem key={navigation?.id}>
@@ -47,7 +63,7 @@ export default function Topbar() {
                     "h-12 py-2 px-4",
                     "font-sans text-xs font-medium",
                     "uppercase",
-                    "text-foreground",
+                    "text-white",
                     "bg-transparent",
                     "hover:text-accent"
                   )}
@@ -56,12 +72,14 @@ export default function Topbar() {
                 </Link>
               </ListItem>
             ))}
+          </List>
 
+          <List className={clsx("flex-row items-center md:ml-auto")}>
             {navRight?.map((navigation) => (
               <ListItem key={navigation?.id}>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button size="xs" variant="text" className="text-sm">
+                    <Button size="xs" variant="text" className="text-sm text-white">
                       {/* <Icon name="Globe" size="sm" /> */}
 
                       {navigation?.name}

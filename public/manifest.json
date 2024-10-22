@@ -1,7 +1,7 @@
 {
 	"name": "Raphix Ecommerce PWA app",
 	"short_name": "Raphix Design",
-	"description": "A Progressive Web App built with Next.js for Raphix Design and Store",
+	"description": "Premium Esports Jerseys for Gamers | Custom Gaming Apparel | Raphix Design",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#FFFFFF",

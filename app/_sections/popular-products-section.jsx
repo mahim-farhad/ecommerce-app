@@ -17,7 +17,7 @@ export default async function PopularProducts() {
         <Box className="mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <Typography className="text-gray-400">Top Rated</Typography>
 
-          <Typography type="h2" className="font-extrabold">
+          <Typography type="h2" className="font-block font-extrabold">
             Popular Products
           </Typography>
         </Box>

@@ -22,7 +22,8 @@ export default function Left() {
       <Typography
         type="h4"
         className={clsx(
-          "font-block uppercase",
+          "font-block !leading-[31px]",
+          "uppercase",
           "tracking-[-0.022em]"
         )}
       >

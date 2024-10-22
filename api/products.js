@@ -25,7 +25,7 @@ import { delayExecute } from "@utils/functions";
 export async function getProduct(productId) {
   try {
     const response = await fetch(
-      `${process.env.BACKEND_URL}/products/${productId}?populate=*`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/products/${productId}?populate=*`,
       {
         method: "GET",
         headers: {
@@ -48,17 +48,18 @@ export async function getProduct(productId) {
   }
 }
 
+
 export async function getProducts() {
   try {
-    await delayExecute(2000);
+    // await delayExecute(2000);
 
     const response = await fetch(
-      `${process.env.BACKEND_URL}/products?populate=*`,
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/products?populate=*`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.BACKEND_API}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BACKEND_API}`,
         },
         next: { revalidate: 60 },
       }

@@ -23,8 +23,3 @@ export async function deleteSession() {
     maxAge: -1
   });
 }
-
-/**
- * For more details see
- * https://nextjs.org/docs/app/building-your-application/authentication
- */

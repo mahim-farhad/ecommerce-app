@@ -9,9 +9,8 @@ export default function Container({
 }) {
   const containerClasses = twMerge(
     "w-full",
-    fluid && "max-w-full",
-    "px-4 sm:px-8 md:px-12 lg:px-14",
-    "xl:px-16 2xl:px-20",
+    fluid ? "max-w-full" : "max-w-screen-2xl",
+    "px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20",
     "mx-auto",
     className
   );

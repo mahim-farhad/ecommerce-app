@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 import Container from "@components/layouts/container";
-import { Grid, GridItem } from "@components/layouts/grid";
+import Box from "@components/layouts/box";
 
 import Left from "@components/navigations/navbar/left";
 import Center from "@components/navigations/navbar/center";
 import Right from "@components/navigations/navbar/right";
 
-import Topbar from "@components/navigations/topbar";
+import Topbar from "../topbar";
 
 export default function Navbar() {
   const router = usePathname();
@@ -24,35 +24,40 @@ export default function Navbar() {
 
   return (
     <>
-      <Topbar />
+      {/* <Topbar /> */}
 
       <nav
         className={clsx(
           "flex items-center justify-between",
-          "h-16 xl:h-20 py-3 2xl:py-4",
+          "h-16 lg:h-20 py-3 2xl:py-4",
           "text-foreground",
           "bg-background"
         )}
       >
         <Container>
-          <Grid
+          <Box
             className={clsx(
               "flex items-center justify-between",
               "gap-4 md:gap-x-8 lg:gap-x-12 xl:gap-x-16 2xl:gap-x-20"
             )}
           >
-            <GridItem className="flex-shrink-0">
+            <Box className="flex-shrink-0">
               <Left />
-            </GridItem>
+            </Box>
 
-            <GridItem className="flex-grow hidden md:block">
+            <Box
+              className={clsx(
+                "flex-grow",
+                "hidden md:block"
+              )}
+            >
               <Center />
-            </GridItem>
+            </Box>
 
-            <GridItem className="flex-shrink-0">
+            <Box className="flex-shrink-0">
               <Right />
-            </GridItem>
-          </Grid>
+            </Box>
+          </Box>
         </Container>
       </nav>
     </>

@@ -34,20 +34,20 @@ export default function Home() {
 
   return (
     <>
-      <FilterProducts />
+      {/* <FilterProducts /> */}
+
+      <BannerSection />
 
       <Main>
-        <BannerSection />
-
-        <Suspense fallback={<ProductsSectionSkeleton />}>
+        {/* <Suspense fallback={<ProductsSectionSkeleton />}>
           <ProductsSection />
-        </Suspense>
+        </Suspense> */}
 
-        <Suspense fallback={<VendorsSectionSkeleton />}>
+        {/* <Suspense fallback={<VendorsSectionSkeleton />}>
           <VendorsSection />
         </Suspense>
 
-        <PopularProductsSection />
+        <PopularProductsSection /> */}
       </Main>
     </>
   );

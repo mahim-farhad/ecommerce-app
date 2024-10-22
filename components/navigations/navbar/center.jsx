@@ -14,10 +14,8 @@ import Button from "@components/ui/button";
 
 import { List, ListItem } from "@components/ui/list";
 import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuGroup,
+  DropdownMenu, DropdownMenuTrigger,
+  DropdownMenuContent, DropdownMenuGroup,
 } from "@components/ui/dropdown-menu";
 
 export default function Center() {
@@ -26,7 +24,7 @@ export default function Center() {
   const [visibleItems, setVisibleItems] = useState([]);
   const [dropdownItems, setDropdownItems] = useState([]);
 
-  const updateVisibility = () => {
+  function updateVisibility() {
     const width = window.innerWidth;
 
     let visibleCount = navigations.length;
@@ -34,6 +32,8 @@ export default function Center() {
     if (width >= 1460) {
       visibleCount = navigations.length - 0;
     } else if (width >= 1064) {
+      visibleCount = navigations.length - 2;
+    } else if (width >= 890) {
       visibleCount = navigations.length - 2;
     } else if (width >= 768) {
       visibleCount = navigations.length - 3;
