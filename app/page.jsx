@@ -15,6 +15,9 @@ import ProductsSectionSkeleton
   from "@components/custom/Skeleton/ProductsSectionSkeleton";
 import VendorsSectionSkeleton
   from "@components/custom/Skeleton/VendorsSectionSkeleton";
+import Button from "@components/ui/button";
+import Box from "@components/layouts/box";
+import HeaderSlider from "./_components/slider";
 
 export default function Home() {
   useEffect(() => {

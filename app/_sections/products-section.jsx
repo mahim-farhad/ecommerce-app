@@ -134,7 +134,7 @@ export default async function Products() {
           />
         </Box>
 
-        <Grid className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <Grid className="grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {productsData?.data?.map((product) => (
             <GridItem key={product?.id} className="col-span-1">
               <ProductCard
@@ -154,8 +154,8 @@ export default async function Products() {
           ))}
 
           {/* <GridItem className="col-span-full">
-            <div className="flex flex-col gap-y-4 sm:gap-y-8 items-center">
-              <Typography className="text-sm text-muted-foreground uppercase">
+            <div className="flex flex-col items-center gap-y-4 sm:gap-y-8">
+              <Typography className="text-sm uppercase text-muted-foreground">
                 Showing 20 of 25 products
               </Typography>
 

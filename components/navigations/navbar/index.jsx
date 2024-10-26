@@ -31,7 +31,8 @@ export default function Navbar() {
           "flex items-center justify-between",
           "h-16 lg:h-20 py-3 2xl:py-4",
           "text-foreground",
-          "bg-background"
+          "bg-background",
+          "border-b"
         )}
       >
         <Container>

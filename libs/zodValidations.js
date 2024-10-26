@@ -98,3 +98,24 @@ export const ProductZodSchema = z.object({
   //   .positive("Price must be a positive number")
   //   .finite("Price must be a finite number"),
 });
+
+export const filterZodSchema = z.object({
+  course: z
+    .string()
+    .min(3, {
+      message: "Identifier must have at least 3 or more characters",
+    })
+    .max(200, {
+      message: "Please enter a valid username or email address",
+    })
+    .trim(),
+  university: z
+    .string()
+    .min(6, {
+      message: "Password must have at least 6 or more characters",
+    })
+    .max(100, {
+      message: "Password must be between 6 and 100 characters",
+    })
+    .trim(),
+});

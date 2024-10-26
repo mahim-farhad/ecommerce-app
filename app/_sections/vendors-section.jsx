@@ -21,7 +21,7 @@ export default async function VendorsSection() {
           <Typography type="h2" className="font-block">Featured Vendors</Typography>
         </Box>
 
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Grid className="grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {vendorsData?.data?.map((vendor) => (
             <GridItem key={vendor?.id} className="col-span-1">
               <VendorCard

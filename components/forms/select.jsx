@@ -239,7 +239,7 @@ export const SelectSeparator = forwardRef(function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       ref={separatorRef}
-      className="h-px -mx-1 my-1 bg-gray-200"
+      className="h-px my-1 -mx-1 bg-gray-200"
       {...props}
     />
   );
@@ -247,4 +247,3 @@ export const SelectSeparator = forwardRef(function SelectSeparator({
 
 SelectSeparator.displayName =
   SelectPrimitive.Separator.displayName;
-

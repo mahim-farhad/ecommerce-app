@@ -327,8 +327,7 @@ export default function Footer() {
                 )}
               >
                 An Independent Platform to Encourage Individual Businesses in
-                Bangladeshi Handicrafts to Enpower Handicrafts all over the
-                Country
+                Bangladeshi Handicrafts
               </Typography>
 
               {/* <Socials /> */}
@@ -436,13 +435,24 @@ export default function Footer() {
           <Box>
             <Typography
               className={clsx(
-                "text-sm font-medium",
+                "!text-sm font-medium",
                 "uppercase",
                 "text-muted-foreground"
               )}
             >
-              © {new Date().getFullYear()}, All Rights Reserved. Designed by
-              {" <Mahim Farhad/>"}
+              ©Raphix, LLC., {new Date().getFullYear()}, All Rights Reserved.
+            </Typography>
+          </Box>
+
+          <Box>
+            <Typography
+              className={clsx(
+                "!text-sm font-medium",
+                "uppercase",
+                "text-muted-foreground"
+              )}
+            >
+              Designed by {" <Mahim Farhad/>"}
             </Typography>
           </Box>
 
