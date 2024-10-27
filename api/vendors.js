@@ -180,6 +180,48 @@ export async function getCourses() {
   }
 }
 
+export async function getLevels() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/levels?populate=*`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_BACKEND_API}`,
+        },
+        next: { revalidate: 60 },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch protected data");
+    }
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    let errorMessage = "";
+
+    if (error.response) {
+      const { status, data } = error.response;
+
+      if (status === 400 || status === 429) {
+        const serverErrorMessage = data?.error?.message || errorMessage;
+
+        errorMessage = serverErrorMessage;
+      } else {
+        errorMessage = data;
+      }
+    } else {
+      errorMessage = error.message || "Something went wrong. Please try again.";
+    }
+
+    return errorMessage;
+  }
+}
+
 export async function getUniversities() {
   try {
     const response = await fetch(
